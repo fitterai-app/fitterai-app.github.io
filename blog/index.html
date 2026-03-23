@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>블로그 — Fitter AI | 크로스핏 & 하이록스 운동 가이드</title>
+<meta name="description" content="크로스핏, 하이록스 운동 기록 팁과 1RM 가이드. Fitter AI 블로그에서 더 스마트한 운동 방법을 알아보세요.">
+<meta name="keywords" content="크로스핏 블로그, 하이록스 가이드, 1RM 계산, WOD 기록, 운동 기록 팁, CrossFit blog, Hyrox guide">
+<meta property="og:title" content="블로그 — Fitter AI">
+<meta property="og:description" content="크로스핏, 하이록스 운동 기록 팁과 1RM 가이드.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://fitterai-app.github.io/og-image.png">
+<meta property="og:url" content="https://fitterai-app.github.io/blog/">
+<meta property="og:locale" content="ko_KR">
+<link rel="canonical" href="https://fitterai-app.github.io/blog/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Pretendard',sans-serif;color:#1A1A1A;background:#F5F7FA;line-height:1.7;-webkit-font-smoothing:antialiased}
+.top-bar{background:#fff;border-bottom:1px solid #E5E7EB;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.top-bar a{font-size:20px;font-weight:800;color:#2196F3;text-decoration:none}
+.top-bar a span{color:#1A1A1A}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-link{font-size:14px;font-weight:500;color:#6B7280;text-decoration:none;transition:color 0.2s}
+.nav-link:hover{color:#1A1A1A}
+.lang-btn{font-size:13px;font-weight:600;color:#2196F3;background:#E3F2FD;padding:6px 14px;border-radius:20px;border:none;cursor:pointer}
+.container{max-width:800px;margin:0 auto;padding:48px 24px 80px}
+.page-title{font-size:36px;font-weight:800;margin-bottom:8px;letter-spacing:-0.5px}
+.page-desc{font-size:16px;color:#6B7280;margin-bottom:40px}
+.post-list{display:flex;flex-direction:column;gap:20px}
+.post-card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.04);transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;color:inherit;display:block}
+.post-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.08)}
+.post-tag{display:inline-block;font-size:12px;font-weight:600;color:#2196F3;background:#E3F2FD;padding:4px 12px;border-radius:12px;margin-bottom:12px}
+.post-tag.green{color:#16A34A;background:#DCFCE7}
+.post-tag.purple{color:#7C3AED;background:#F3E8FF}
+.post-title{font-size:22px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px}
+.post-excerpt{font-size:15px;color:#6B7280;line-height:1.6;margin-bottom:12px}
+.post-meta{font-size:13px;color:#9CA3AF}
+.cta-banner{margin-top:48px;background:linear-gradient(135deg,#1565C0,#2196F3,#42A5F5);border-radius:16px;padding:40px;text-align:center;color:#fff}
+.cta-banner h3{font-size:24px;font-weight:700;margin-bottom:8px}
+.cta-banner p{font-size:15px;opacity:0.9;margin-bottom:20px}
+.cta-btn{display:inline-block;background:#fff;color:#1976D2;font-size:15px;font-weight:600;padding:12px 28px;border-radius:12px;text-decoration:none;transition:transform 0.2s}
+.cta-btn:hover{transform:translateY(-2px)}
+@media(max-width:600px){.page-title{font-size:28px}.post-card{padding:24px}.post-title{font-size:19px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="../index.html">Fitter <span>AI</span></a>
+  <div class="nav-right">
+    <a href="../index.html" class="nav-link" data-ko="홈" data-en="Home">홈</a>
+    <button class="lang-btn" onclick="toggleLang()">EN</button>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="page-title" data-ko="블로그" data-en="Blog">블로그</h1>
+  <p class="page-desc" data-ko="크로스핏 & 하이록스 운동에 대한 유용한 팁과 가이드" data-en="Useful tips and guides for CrossFit & Hyrox training">크로스핏 & 하이록스 운동에 대한 유용한 팁과 가이드</p>
+
+  <div class="post-list">
+    <a href="crossfit-workout-tracking.html" class="post-card">
+      <span class="post-tag" data-ko="크로스핏" data-en="CrossFit">크로스핏</span>
+      <h2 class="post-title" data-ko="크로스핏 운동 기록, 왜 해야 할까? 효과적인 기록 방법 5가지" data-en="Why You Should Track Your CrossFit Workouts — 5 Effective Methods">크로스핏 운동 기록, 왜 해야 할까? 효과적인 기록 방법 5가지</h2>
+      <p class="post-excerpt" data-ko="운동 기록이 성장의 핵심인 이유와, 바쁜 크로스핏터를 위한 스마트한 기록 방법을 소개합니다." data-en="Learn why workout logging is key to progress and discover smart tracking methods for busy CrossFitters.">운동 기록이 성장의 핵심인 이유와, 바쁜 크로스핏터를 위한 스마트한 기록 방법을 소개합니다.</p>
+      <div class="post-meta">2026.03.23</div>
+    </a>
+
+    <a href="1rm-tracking-guide.html" class="post-card">
+      <span class="post-tag green" data-ko="1RM 가이드" data-en="1RM Guide">1RM 가이드</span>
+      <h2 class="post-title" data-ko="1RM이란? 크로스핏에서 1RM을 추적해야 하는 이유와 활용법" data-en="What is 1RM? Why CrossFitters Should Track It and How to Use It">1RM이란? 크로스핏에서 1RM을 추적해야 하는 이유와 활용법</h2>
+      <p class="post-excerpt" data-ko="1RM의 개념부터 % 환산표 활용법, 효과적인 추적 방법까지 한 번에 정리합니다." data-en="From the basics of 1RM to percentage charts and effective tracking methods — everything in one guide.">1RM의 개념부터 % 환산표 활용법, 효과적인 추적 방법까지 한 번에 정리합니다.</p>
+      <div class="post-meta">2026.03.23</div>
+    </a>
+
+    <a href="hyrox-training-guide.html" class="post-card">
+      <span class="post-tag purple" data-ko="하이록스" data-en="Hyrox">하이록스</span>
+      <h2 class="post-title" data-ko="하이록스 입문 가이드: 종목 소개부터 훈련 기록 관리까지" data-en="Hyrox Beginner's Guide: Events, Training, and How to Track Progress">하이록스 입문 가이드: 종목 소개부터 훈련 기록 관리까지</h2>
+      <p class="post-excerpt" data-ko="하이록스가 처음이라면? 8개 종목 소개와 효과적인 훈련 계획, 기록 관리 방법을 알려드립니다." data-en="New to Hyrox? Learn about all 8 events, training strategies, and how to manage your progress.">하이록스가 처음이라면? 8개 종목 소개와 효과적인 훈련 계획, 기록 관리 방법을 알려드립니다.</p>
+      <div class="post-meta">2026.03.23</div>
+    </a>
+  </div>
+
+  <div class="cta-banner">
+    <h3 data-ko="운동 기록, 더 쉽게 시작하세요" data-en="Start Tracking Your Workouts Easily">운동 기록, 더 쉽게 시작하세요</h3>
+    <p data-ko="화이트보드 사진 한 장이면 AI가 알아서 기록합니다" data-en="Just snap the whiteboard — AI does the rest">화이트보드 사진 한 장이면 AI가 알아서 기록합니다</p>
+    <a href="../index.html#download" class="cta-btn" data-ko="Fitter AI 다운로드" data-en="Download Fitter AI">Fitter AI 다운로드</a>
+  </div>
+</div>
+
+<script>
+let lang=localStorage.getItem('lang')||'ko';
+if(lang==='en')applyLang('en');
+function toggleLang(){lang=lang==='ko'?'en':'ko';localStorage.setItem('lang',lang);applyLang(lang)}
+function applyLang(l){document.querySelectorAll('[data-ko]').forEach(el=>{const t=el.getAttribute('data-'+l);if(t)el.innerHTML=t});document.querySelector('.lang-btn').textContent=l==='ko'?'EN':'한국어';document.documentElement.lang=l}
+</script>
+</body>
+</html>

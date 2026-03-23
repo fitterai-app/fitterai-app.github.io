@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fitterai-app.github.io/sitemap.xml
