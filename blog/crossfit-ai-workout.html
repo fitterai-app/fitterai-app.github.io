@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>크로스핏 AI 시대: 화이트보드 사진으로 WOD 자동 기록하는 방법 — Fitter AI</title>
+<meta name="description" content="크로스핏 AI가 화이트보드 사진 한 장으로 WOD를 자동 기록하는 원리와 방법을 소개합니다. OCR 기술부터 AI 운동 기록의 미래까지 완벽 가이드.">
+<meta name="keywords" content="크로스핏 AI, 크로스핏AI, AI 운동 기록, CrossFit AI, OCR 운동 기록, 화이트보드 AI, WOD 자동 기록, 핏터AI, Fitter AI">
+<meta property="og:title" content="크로스핏 AI 시대: 화이트보드 사진으로 WOD 자동 기록하는 방법">
+<meta property="og:description" content="크로스핏 AI가 화이트보드 사진 한 장으로 WOD를 자동 기록하는 원리와 방법을 알아보세요.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://fitterai-app.github.io/og-image.png">
+<meta property="og:url" content="https://fitterai-app.github.io/blog/crossfit-ai-workout.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-03-24">
+<meta property="article:author" content="Fitter AI">
+<meta property="article:tag" content="크로스핏 AI">
+<meta property="article:tag" content="AI 운동 기록">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://fitterai-app.github.io/blog/crossfit-ai-workout.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "크로스핏 AI 시대: 화이트보드 사진으로 WOD 자동 기록하는 방법",
+  "description": "크로스핏 AI가 화이트보드 사진 한 장으로 WOD를 자동 기록하는 원리와 방법을 소개합니다. OCR 기술부터 AI 운동 기록의 미래까지 완벽 가이드.",
+  "author": { "@type": "Organization", "name": "Fitter AI", "url": "https://fitterai-app.github.io" },
+  "publisher": { "@type": "Organization", "name": "Fitter AI" },
+  "datePublished": "2026-03-24",
+  "image": "https://fitterai-app.github.io/og-image.png",
+  "url": "https://fitterai-app.github.io/blog/crossfit-ai-workout.html",
+  "mainEntityOfPage": "https://fitterai-app.github.io/blog/crossfit-ai-workout.html",
+  "inLanguage": "ko"
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Pretendard',sans-serif;color:#1A1A1A;background:#F5F7FA;line-height:1.7;-webkit-font-smoothing:antialiased}
+.top-bar{background:#fff;border-bottom:1px solid #E5E7EB;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.top-bar a{font-size:20px;font-weight:800;color:#2196F3;text-decoration:none}
+.top-bar a span{color:#1A1A1A}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-link{font-size:14px;font-weight:500;color:#6B7280;text-decoration:none}
+.nav-link:hover{color:#1A1A1A}
+.lang-btn{font-size:13px;font-weight:600;color:#2196F3;background:#E3F2FD;padding:6px 14px;border-radius:20px;border:none;cursor:pointer}
+article{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+.breadcrumb{font-size:13px;color:#9CA3AF;margin-bottom:32px}
+.breadcrumb a{color:#2196F3;text-decoration:none}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:#2196F3;background:#E3F2FD;padding:4px 12px;border-radius:12px;margin-bottom:16px}
+h1{font-size:32px;font-weight:800;line-height:1.3;letter-spacing:-0.5px;margin-bottom:16px}
+.meta{font-size:14px;color:#9CA3AF;margin-bottom:40px}
+.content h2{font-size:24px;font-weight:700;margin:48px 0 16px;letter-spacing:-0.3px;color:#1A1A1A}
+.content h3{font-size:20px;font-weight:600;margin:32px 0 12px;color:#1A1A1A}
+.content p{font-size:16px;color:#4B5563;margin-bottom:20px;line-height:1.8}
+.content ul,.content ol{margin:0 0 20px 24px;color:#4B5563}
+.content li{margin-bottom:8px;line-height:1.7}
+.content strong{color:#1A1A1A}
+.content blockquote{border-left:3px solid #2196F3;padding:12px 20px;margin:24px 0;background:#F0F7FF;border-radius:0 8px 8px 0;font-size:15px;color:#374151}
+.tip-box{background:#DCFCE7;border-radius:12px;padding:20px 24px;margin:24px 0;font-size:15px;color:#166534}
+.tip-box strong{color:#15803D}
+.compare-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px}
+.compare-table th{background:#E3F2FD;color:#1565C0;padding:12px 16px;text-align:left;font-weight:600}
+.compare-table td{padding:12px 16px;border-bottom:1px solid #E5E7EB;color:#4B5563}
+.compare-table tr:last-child td{border-bottom:none}
+.step-number{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:#2196F3;color:#fff;border-radius:50%;font-size:14px;font-weight:700;margin-right:12px;flex-shrink:0}
+.step-item{display:flex;align-items:flex-start;margin-bottom:20px}
+.step-item p{margin-bottom:0}
+.cta-box{background:linear-gradient(135deg,#1565C0,#2196F3);border-radius:16px;padding:32px;text-align:center;color:#fff;margin:40px 0}
+.cta-box h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.cta-box p{opacity:0.9;margin-bottom:16px;font-size:15px}
+.cta-btn{display:inline-block;background:#fff;color:#1976D2;font-size:15px;font-weight:600;padding:12px 28px;border-radius:12px;text-decoration:none;transition:transform 0.2s}
+.cta-btn:hover{transform:translateY(-2px)}
+.related{margin-top:48px;padding-top:32px;border-top:1px solid #E5E7EB}
+.related h3{font-size:18px;font-weight:700;margin-bottom:16px}
+.related-list{display:flex;flex-direction:column;gap:12px}
+.related-list a{display:block;padding:16px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);font-size:15px;font-weight:500;color:#1A1A1A;text-decoration:none;transition:transform 0.2s}
+.related-list a:hover{transform:translateY(-2px)}
+@media(max-width:600px){h1{font-size:26px}.content h2{font-size:20px}.compare-table{font-size:13px}.compare-table th,.compare-table td{padding:8px 10px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="../index.html">Fitter <span>AI</span></a>
+  <div class="nav-right">
+    <a href="../index.html" class="nav-link" data-ko="홈" data-en="Home">홈</a>
+    <a href="./" class="nav-link" data-ko="블로그" data-en="Blog">블로그</a>
+    <button class="lang-btn" onclick="toggleLang()">EN</button>
+  </div>
+</div>
+
+<article>
+  <div class="breadcrumb"><a href="../index.html" data-ko="홈" data-en="Home">홈</a> &gt; <a href="./" data-ko="블로그" data-en="Blog">블로그</a> &gt; <span data-ko="크로스핏 AI" data-en="CrossFit AI">크로스핏 AI</span></div>
+  <span class="tag" data-ko="크로스핏 AI" data-en="CrossFit AI">크로스핏 AI</span>
+  <h1 data-ko="크로스핏 AI 시대: 화이트보드 사진으로 WOD 자동 기록하는 방법" data-en="The CrossFit AI Era: How to Auto-Log WODs from Whiteboard Photos">크로스핏 AI 시대: 화이트보드 사진으로 WOD 자동 기록하는 방법</h1>
+  <div class="meta">2026.03.24 · Fitter AI</div>
+
+  <div class="content">
+
+    <p data-ko="크로스핏 박스에서 하루를 시작할 때, 가장 먼저 눈에 들어오는 것은 화이트보드에 적힌 오늘의 WOD(Workout of the Day)입니다. 코치가 손글씨로 적어둔 운동 내용, 무게, 라운드 수, 시간 제한 — 이 모든 정보를 운동 후에 일일이 수기로 옮겨 적는 일은 번거롭고, 자주 빠뜨리게 됩니다. 하지만 이제 <strong>크로스핏 AI</strong> 기술이 이 과정을 완전히 바꾸고 있습니다." data-en="When you start your day at a CrossFit box, the first thing you see is the WOD (Workout of the Day) written on the whiteboard. The coach's handwritten workout details, weights, rounds, and time caps — manually transcribing all this after your workout is tedious and often gets skipped. But now, <strong>CrossFit AI</strong> technology is completely transforming this process.">크로스핏 박스에서 하루를 시작할 때, 가장 먼저 눈에 들어오는 것은 화이트보드에 적힌 오늘의 WOD(Workout of the Day)입니다. 코치가 손글씨로 적어둔 운동 내용, 무게, 라운드 수, 시간 제한 — 이 모든 정보를 운동 후에 일일이 수기로 옮겨 적는 일은 번거롭고, 자주 빠뜨리게 됩니다. 하지만 이제 <strong>크로스핏 AI</strong> 기술이 이 과정을 완전히 바꾸고 있습니다.</p>
+
+    <p data-ko="이 글에서는 크로스핏 AI가 무엇인지, OCR(광학 문자 인식) 기술이 어떻게 화이트보드를 읽는지, 그리고 AI 운동 기록이 기존 수기 기록과 어떻게 다른지를 상세하게 설명합니다. 크로스핏을 사랑하는 분이라면, 이 기술이 여러분의 운동 루틴을 얼마나 혁신적으로 바꿀 수 있는지 알게 될 것입니다." data-en="In this guide, we'll explain what CrossFit AI means, how OCR (Optical Character Recognition) technology reads whiteboards, and how AI workout logging differs from manual methods. If you love CrossFit, you'll discover how this technology can revolutionize your training routine.">이 글에서는 크로스핏 AI가 무엇인지, OCR(광학 문자 인식) 기술이 어떻게 화이트보드를 읽는지, 그리고 AI 운동 기록이 기존 수기 기록과 어떻게 다른지를 상세하게 설명합니다. 크로스핏을 사랑하는 분이라면, 이 기술이 여러분의 운동 루틴을 얼마나 혁신적으로 바꿀 수 있는지 알게 될 것입니다.</p>
+
+    <h2 data-ko="크로스핏 AI란 무엇인가?" data-en="What is CrossFit AI?">크로스핏 AI란 무엇인가?</h2>
+
+    <p data-ko="<strong>크로스핏 AI</strong>는 인공지능 기술을 크로스핏 운동 환경에 적용한 것을 말합니다. 단순히 '운동 앱에 AI를 붙인 것'이 아니라, 크로스핏 특유의 복잡한 운동 구조를 이해하고 자동으로 분석할 수 있는 기술을 의미합니다." data-en="<strong>CrossFit AI</strong> refers to the application of artificial intelligence technology to the CrossFit training environment. It's not just 'adding AI to a fitness app' — it means technology that understands and automatically analyzes CrossFit's uniquely complex workout structures."><strong>크로스핏 AI</strong>는 인공지능 기술을 크로스핏 운동 환경에 적용한 것을 말합니다. 단순히 '운동 앱에 AI를 붙인 것'이 아니라, 크로스핏 특유의 복잡한 운동 구조를 이해하고 자동으로 분석할 수 있는 기술을 의미합니다.</p>
+
+    <p data-ko="크로스핏 운동은 일반 헬스장 운동과 근본적으로 다릅니다. WOD는 여러 동작을 조합하고, 시간 제한(타임캡)이 있으며, For Time, AMRAP, EMOM 등 다양한 스코어링 방식이 존재합니다. 예를 들어 'Fran'이라는 벤치마크 WOD는 '21-15-9 Thrusters(95/65 lb) + Pull-ups, For Time'이라는 복합적인 구조를 가집니다." data-en="CrossFit workouts are fundamentally different from regular gym exercises. WODs combine multiple movements with time caps, and use various scoring methods like For Time, AMRAP, and EMOM. For example, the benchmark WOD 'Fran' has a complex structure: '21-15-9 Thrusters (95/65 lb) + Pull-ups, For Time.'">크로스핏 운동은 일반 헬스장 운동과 근본적으로 다릅니다. WOD는 여러 동작을 조합하고, 시간 제한(타임캡)이 있으며, For Time, AMRAP, EMOM 등 다양한 스코어링 방식이 존재합니다. 예를 들어 'Fran'이라는 벤치마크 WOD는 '21-15-9 Thrusters(95/65 lb) + Pull-ups, For Time'이라는 복합적인 구조를 가집니다.</p>
+
+    <p data-ko="크로스핏AI는 이러한 복잡한 WOD 구조를 이해하고, 화이트보드에 적힌 내용을 읽어서 자동으로 구조화된 데이터로 변환합니다. 운동 이름, 동작 목록, 반복 횟수, 무게, 스코어 타입까지 모두 자동으로 인식하는 것이 크로스핏 AI의 핵심입니다." data-en="CrossFit AI understands these complex WOD structures and reads whiteboard content to automatically convert it into structured data. Automatically recognizing workout names, movement lists, rep counts, weights, and score types is at the core of CrossFit AI.">크로스핏AI는 이러한 복잡한 WOD 구조를 이해하고, 화이트보드에 적힌 내용을 읽어서 자동으로 구조화된 데이터로 변환합니다. 운동 이름, 동작 목록, 반복 횟수, 무게, 스코어 타입까지 모두 자동으로 인식하는 것이 크로스핏 AI의 핵심입니다.</p>
+
+    <h3 data-ko="크로스핏 AI가 해결하는 문제들" data-en="Problems That CrossFit AI Solves">크로스핏 AI가 해결하는 문제들</h3>
+
+    <ul>
+      <li data-ko="<strong>기록의 번거로움</strong>: 운동 후 지친 상태에서 WOD 내용을 수기로 옮겨 적기가 귀찮음" data-en="<strong>Logging fatigue</strong>: Too tired after a workout to manually transcribe the WOD"><strong>기록의 번거로움</strong>: 운동 후 지친 상태에서 WOD 내용을 수기로 옮겨 적기가 귀찮음</li>
+      <li data-ko="<strong>기록 누락</strong>: 기록을 미루다가 결국 아예 안 하게 되는 악순환" data-en="<strong>Missing records</strong>: Procrastinating on logging leads to never logging at all"><strong>기록 누락</strong>: 기록을 미루다가 결국 아예 안 하게 되는 악순환</li>
+      <li data-ko="<strong>부정확한 기록</strong>: 기억에 의존하다 보면 무게, 라운드 수 등이 부정확해짐" data-en="<strong>Inaccurate records</strong>: Relying on memory leads to incorrect weights, rounds, etc."><strong>부정확한 기록</strong>: 기억에 의존하다 보면 무게, 라운드 수 등이 부정확해짐</li>
+      <li data-ko="<strong>데이터 활용 불가</strong>: 노트나 메모장에 적으면 나중에 분석이 어려움" data-en="<strong>Unusable data</strong>: Notes in a notebook can't be analyzed later"><strong>데이터 활용 불가</strong>: 노트나 메모장에 적으면 나중에 분석이 어려움</li>
+      <li data-ko="<strong>복잡한 입력 양식</strong>: 기존 앱들의 수동 입력 방식은 크로스핏 WOD 구조에 맞지 않음" data-en="<strong>Complex input forms</strong>: Manual entry in existing apps doesn't fit CrossFit WOD structures"><strong>복잡한 입력 양식</strong>: 기존 앱들의 수동 입력 방식은 크로스핏 WOD 구조에 맞지 않음</li>
+    </ul>
+
+    <h2 data-ko="OCR 기술은 어떻게 화이트보드를 읽는가?" data-en="How Does OCR Technology Read Whiteboards?">OCR 기술은 어떻게 화이트보드를 읽는가?</h2>
+
+    <p data-ko="<strong>크로스핏 AI</strong>의 핵심 기술은 OCR(Optical Character Recognition, 광학 문자 인식)입니다. OCR은 이미지 속의 텍스트를 컴퓨터가 읽을 수 있는 문자 데이터로 변환하는 기술로, 이미 문서 스캔, 번역 앱 등에서 널리 사용되고 있습니다." data-en="The core technology behind <strong>CrossFit AI</strong> is OCR (Optical Character Recognition). OCR converts text in images into machine-readable character data, and is already widely used in document scanning and translation apps."><strong>크로스핏 AI</strong>의 핵심 기술은 OCR(Optical Character Recognition, 광학 문자 인식)입니다. OCR은 이미지 속의 텍스트를 컴퓨터가 읽을 수 있는 문자 데이터로 변환하는 기술로, 이미 문서 스캔, 번역 앱 등에서 널리 사용되고 있습니다.</p>
+
+    <p data-ko="하지만 크로스핏 화이트보드의 OCR은 일반 문서 스캔과는 차원이 다릅니다. 크로스핏 화이트보드에는 고유한 난관들이 존재합니다." data-en="However, OCR for CrossFit whiteboards is a completely different challenge from regular document scanning. CrossFit whiteboards present unique difficulties.">하지만 크로스핏 화이트보드의 OCR은 일반 문서 스캔과는 차원이 다릅니다. 크로스핏 화이트보드에는 고유한 난관들이 존재합니다.</p>
+
+    <h3 data-ko="화이트보드 OCR의 기술적 도전 과제" data-en="Technical Challenges of Whiteboard OCR">화이트보드 OCR의 기술적 도전 과제</h3>
+
+    <p data-ko="첫째, <strong>손글씨 인식</strong>입니다. 화이트보드의 내용은 코치마다 글씨체가 다르고, 마커 두께, 색상도 제각각입니다. 인쇄체와 달리 손글씨는 글자 간 간격이 불규칙하고 형태가 일정하지 않아서 인식이 어렵습니다. 특히 마커가 번지거나 흐려진 경우에는 더욱 까다로워집니다." data-en="First, <strong>handwriting recognition</strong>. Whiteboard content varies by coach — different handwriting styles, marker thicknesses, and colors. Unlike printed text, handwriting has irregular spacing and inconsistent forms, making recognition difficult. It becomes even harder when markers smudge or fade.">첫째, <strong>손글씨 인식</strong>입니다. 화이트보드의 내용은 코치마다 글씨체가 다르고, 마커 두께, 색상도 제각각입니다. 인쇄체와 달리 손글씨는 글자 간 간격이 불규칙하고 형태가 일정하지 않아서 인식이 어렵습니다. 특히 마커가 번지거나 흐려진 경우에는 더욱 까다로워집니다.</p>
+
+    <p data-ko="둘째, <strong>비정형 레이아웃</strong>입니다. 화이트보드는 표준화된 양식이 없습니다. 어떤 박스는 WOD를 세로로 나열하고, 어떤 박스는 가로로 여러 칸에 나눠 쓰며, 화살표나 밑줄 등의 강조 표시도 다양합니다. AI 운동 기록 시스템은 이러한 다양한 레이아웃을 모두 이해할 수 있어야 합니다." data-en="Second, <strong>unstructured layouts</strong>. Whiteboards have no standardized format. Some boxes list WODs vertically, others use multiple columns horizontally, with varying use of arrows and underlines. AI workout logging systems must understand all these different layouts.">둘째, <strong>비정형 레이아웃</strong>입니다. 화이트보드는 표준화된 양식이 없습니다. 어떤 박스는 WOD를 세로로 나열하고, 어떤 박스는 가로로 여러 칸에 나눠 쓰며, 화살표나 밑줄 등의 강조 표시도 다양합니다. AI 운동 기록 시스템은 이러한 다양한 레이아웃을 모두 이해할 수 있어야 합니다.</p>
+
+    <p data-ko="셋째, <strong>전문 용어 인식</strong>입니다. 크로스핏에는 'C2B'(Chest-to-Bar), 'T2B'(Toes-to-Bar), 'HSPU'(Handstand Push-Up), 'DU'(Double Under) 같은 약어가 매우 많습니다. 일반 OCR 엔진은 이런 약어를 오타로 처리하거나 잘못 인식할 수 있지만, 크로스핏AI에 최적화된 시스템은 이런 용어를 정확히 이해합니다." data-en="Third, <strong>specialized terminology</strong>. CrossFit uses many abbreviations like C2B (Chest-to-Bar), T2B (Toes-to-Bar), HSPU (Handstand Push-Up), and DU (Double Under). Regular OCR engines might flag these as typos, but CrossFit AI-optimized systems understand these terms correctly.">셋째, <strong>전문 용어 인식</strong>입니다. 크로스핏에는 'C2B'(Chest-to-Bar), 'T2B'(Toes-to-Bar), 'HSPU'(Handstand Push-Up), 'DU'(Double Under) 같은 약어가 매우 많습니다. 일반 OCR 엔진은 이런 약어를 오타로 처리하거나 잘못 인식할 수 있지만, 크로스핏AI에 최적화된 시스템은 이런 용어를 정확히 이해합니다.</p>
+
+    <p data-ko="넷째, <strong>촬영 환경</strong>입니다. 박스 내부의 조명, 화이트보드 반사, 촬영 각도 등이 일정하지 않습니다. 형광등 빛이 반사되거나, 비스듬한 각도에서 찍거나, 화이트보드 일부만 프레임에 들어오는 경우에도 AI가 정확하게 텍스트를 추출할 수 있어야 합니다." data-en="Fourth, <strong>shooting conditions</strong>. Lighting inside the box, whiteboard reflections, and camera angles are inconsistent. The AI must accurately extract text even with fluorescent light glare, angled shots, or partially framed whiteboards.">넷째, <strong>촬영 환경</strong>입니다. 박스 내부의 조명, 화이트보드 반사, 촬영 각도 등이 일정하지 않습니다. 형광등 빛이 반사되거나, 비스듬한 각도에서 찍거나, 화이트보드 일부만 프레임에 들어오는 경우에도 AI가 정확하게 텍스트를 추출할 수 있어야 합니다.</p>
+
+    <h3 data-ko="크로스핏 AI의 OCR 처리 과정" data-en="How CrossFit AI Processes OCR">크로스핏 AI의 OCR 처리 과정</h3>
+
+    <p data-ko="현대의 크로스핏 AI 시스템은 다음과 같은 단계로 화이트보드를 처리합니다." data-en="Modern CrossFit AI systems process whiteboards through the following steps.">현대의 크로스핏 AI 시스템은 다음과 같은 단계로 화이트보드를 처리합니다.</p>
+
+    <div class="step-item">
+      <span class="step-number">1</span>
+      <p data-ko="<strong>이미지 전처리</strong> — 촬영된 사진에서 화이트보드 영역을 감지하고, 조명 보정과 원근 왜곡 보정을 수행합니다. 사용자가 화이트보드 영역을 크롭(crop)하면 인식 정확도가 더 높아집니다." data-en="<strong>Image preprocessing</strong> — Detects the whiteboard area, corrects lighting and perspective distortion. When users crop the whiteboard area, recognition accuracy improves."><strong>이미지 전처리</strong> — 촬영된 사진에서 화이트보드 영역을 감지하고, 조명 보정과 원근 왜곡 보정을 수행합니다. 사용자가 화이트보드 영역을 크롭(crop)하면 인식 정확도가 더 높아집니다.</p>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">2</span>
+      <p data-ko="<strong>OCR 텍스트 추출</strong> — Google Cloud Vision 등의 OCR 엔진이 이미지에서 텍스트를 추출합니다. 이때 각 단어의 좌표(bounding box)도 함께 추출되어, 줄 단위로 텍스트를 재구성할 수 있습니다." data-en="<strong>OCR text extraction</strong> — OCR engines like Google Cloud Vision extract text from the image. Word coordinates (bounding boxes) are also extracted, allowing line-by-line text reconstruction."><strong>OCR 텍스트 추출</strong> — Google Cloud Vision 등의 OCR 엔진이 이미지에서 텍스트를 추출합니다. 이때 각 단어의 좌표(bounding box)도 함께 추출되어, 줄 단위로 텍스트를 재구성할 수 있습니다.</p>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">3</span>
+      <p data-ko="<strong>줄 재구성(Line Reconstruction)</strong> — 손글씨의 수직 편차로 인해 같은 줄의 단어가 서로 다른 줄로 분리되는 경우가 많습니다. Adaptive threshold 알고리즘을 사용하여 단어들의 Y좌표를 기반으로 같은 줄에 속하는 단어들을 정확하게 묶어줍니다." data-en="<strong>Line reconstruction</strong> — Handwriting's vertical variance often splits words on the same line into different lines. Adaptive threshold algorithms use Y-coordinates to accurately group words belonging to the same line."><strong>줄 재구성(Line Reconstruction)</strong> — 손글씨의 수직 편차로 인해 같은 줄의 단어가 서로 다른 줄로 분리되는 경우가 많습니다. Adaptive threshold 알고리즘을 사용하여 단어들의 Y좌표를 기반으로 같은 줄에 속하는 단어들을 정확하게 묶어줍니다.</p>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">4</span>
+      <p data-ko="<strong>AI 의미 분석</strong> — 추출된 텍스트를 AI가 크로스핏 맥락에서 해석합니다. 'For Time', 'AMRAP 20', '21-15-9' 같은 패턴을 인식하여 운동 이름, 동작 목록, 스코어 타입, 시간 제한 등을 구조화된 데이터로 변환합니다." data-en="<strong>AI semantic analysis</strong> — The AI interprets extracted text within a CrossFit context. Patterns like 'For Time', 'AMRAP 20', '21-15-9' are recognized and converted into structured data including workout name, movements, score type, and time cap."><strong>AI 의미 분석</strong> — 추출된 텍스트를 AI가 크로스핏 맥락에서 해석합니다. 'For Time', 'AMRAP 20', '21-15-9' 같은 패턴을 인식하여 운동 이름, 동작 목록, 스코어 타입, 시간 제한 등을 구조화된 데이터로 변환합니다.</p>
+    </div>
+
+    <div class="step-item">
+      <span class="step-number">5</span>
+      <p data-ko="<strong>결과 확인 및 저장</strong> — AI가 분석한 결과를 사용자가 확인하고, 필요하면 수정한 뒤 저장합니다. 자신의 점수(시간, 라운드+렙스 등)만 추가하면 기록이 완성됩니다." data-en="<strong>Review and save</strong> — Users review the AI's analysis, make corrections if needed, and save. Just add your score (time, rounds+reps, etc.) and the record is complete."><strong>결과 확인 및 저장</strong> — AI가 분석한 결과를 사용자가 확인하고, 필요하면 수정한 뒤 저장합니다. 자신의 점수(시간, 라운드+렙스 등)만 추가하면 기록이 완성됩니다.</p>
+    </div>
+
+    <h2 data-ko="Before vs After: 수기 기록과 AI 운동 기록 비교" data-en="Before vs After: Manual Logging vs AI Workout Logging">Before vs After: 수기 기록과 AI 운동 기록 비교</h2>
+
+    <p data-ko="크로스핏 AI가 등장하기 전과 후, 운동 기록 경험은 어떻게 달라졌을까요? 구체적으로 비교해보겠습니다." data-en="How has the workout logging experience changed before and after CrossFit AI? Let's compare in detail.">크로스핏 AI가 등장하기 전과 후, 운동 기록 경험은 어떻게 달라졌을까요? 구체적으로 비교해보겠습니다.</p>
+
+    <table class="compare-table">
+      <tr>
+        <th data-ko="항목" data-en="Category">항목</th>
+        <th data-ko="수기 기록 (Before)" data-en="Manual (Before)">수기 기록 (Before)</th>
+        <th data-ko="AI 운동 기록 (After)" data-en="AI Logging (After)">AI 운동 기록 (After)</th>
+      </tr>
+      <tr>
+        <td data-ko="기록 소요 시간" data-en="Time to log">기록 소요 시간</td>
+        <td data-ko="5~10분 (WOD 내용 + 결과 수동 입력)" data-en="5-10 min (manual WOD + result entry)">5~10분 (WOD 내용 + 결과 수동 입력)</td>
+        <td data-ko="30초 (사진 촬영 + 결과만 입력)" data-en="30 sec (photo + enter result only)">30초 (사진 촬영 + 결과만 입력)</td>
+      </tr>
+      <tr>
+        <td data-ko="WOD 내용 정확도" data-en="WOD content accuracy">WOD 내용 정확도</td>
+        <td data-ko="기억에 의존, 세부사항 누락 빈번" data-en="Memory-dependent, details often missed">기억에 의존, 세부사항 누락 빈번</td>
+        <td data-ko="화이트보드 원본 그대로 캡처" data-en="Captured exactly from the whiteboard">화이트보드 원본 그대로 캡처</td>
+      </tr>
+      <tr>
+        <td data-ko="기록 지속률" data-en="Logging consistency">기록 지속률</td>
+        <td data-ko="귀찮아서 자주 빠뜨림" data-en="Often skipped due to inconvenience">귀찮아서 자주 빠뜨림</td>
+        <td data-ko="사진만 찍으면 되니 꾸준히 기록" data-en="Just snap a photo, so logging is consistent">사진만 찍으면 되니 꾸준히 기록</td>
+      </tr>
+      <tr>
+        <td data-ko="데이터 구조화" data-en="Data structure">데이터 구조화</td>
+        <td data-ko="자유 텍스트 메모, 분석 불가" data-en="Free-text notes, unanalyzable">자유 텍스트 메모, 분석 불가</td>
+        <td data-ko="스코어 타입, 동작, 무게 등 자동 구조화" data-en="Auto-structured: score type, movements, weights">스코어 타입, 동작, 무게 등 자동 구조화</td>
+      </tr>
+      <tr>
+        <td data-ko="성장 추적" data-en="Progress tracking">성장 추적</td>
+        <td data-ko="과거 기록 찾기 어려움" data-en="Hard to find past records">과거 기록 찾기 어려움</td>
+        <td data-ko="자동 저장 + 검색 + 차트 분석" data-en="Auto-saved + searchable + chart analysis">자동 저장 + 검색 + 차트 분석</td>
+      </tr>
+    </table>
+
+    <blockquote data-ko="크로스핏 AI를 활용한 운동 기록의 가장 큰 장점은 '진입 장벽이 없다'는 것입니다. 사진 한 장이면 끝이니까, 아무리 지쳐도 기록을 빠뜨릴 이유가 없습니다." data-en="The biggest advantage of AI workout logging is zero friction. A single photo is all it takes, so there's no reason to skip logging no matter how tired you are.">크로스핏 AI를 활용한 운동 기록의 가장 큰 장점은 '진입 장벽이 없다'는 것입니다. 사진 한 장이면 끝이니까, 아무리 지쳐도 기록을 빠뜨릴 이유가 없습니다.</blockquote>
+
+    <h2 data-ko="AI 기반 크로스핏 기록의 핵심 기능" data-en="Key Features of AI-Powered CrossFit Tracking">AI 기반 크로스핏 기록의 핵심 기능</h2>
+
+    <p data-ko="크로스핏 AI 앱이 제공하는 기능은 단순한 사진 인식에서 그치지 않습니다. 진정한 AI 운동 기록 시스템은 다음과 같은 기능들을 포함합니다." data-en="CrossFit AI apps offer more than simple photo recognition. A true AI workout logging system includes the following features.">크로스핏 AI 앱이 제공하는 기능은 단순한 사진 인식에서 그치지 않습니다. 진정한 AI 운동 기록 시스템은 다음과 같은 기능들을 포함합니다.</p>
+
+    <h3 data-ko="1. 스마트 WOD 인식" data-en="1. Smart WOD Recognition">1. 스마트 WOD 인식</h3>
+
+    <p data-ko="AI가 화이트보드의 텍스트를 단순히 읽는 것이 아니라, 크로스핏 운동의 맥락을 이해합니다. 'AMRAP 20'이라는 텍스트를 보면 이것이 '20분간 가능한 많은 라운드 반복'이라는 스코어 타입임을 자동으로 인식합니다. 'For Time'이 보이면 시간 기록 방식이라는 것을, 'EMOM 10'이 보이면 매분 반복 방식이라는 것을 알아냅니다." data-en="The AI doesn't just read whiteboard text — it understands CrossFit workout context. When it sees 'AMRAP 20', it automatically recognizes this as a score type meaning '20 minutes, as many rounds as possible.' 'For Time' signals a time-based scoring method, and 'EMOM 10' indicates an every-minute-on-the-minute format.">AI가 화이트보드의 텍스트를 단순히 읽는 것이 아니라, 크로스핏 운동의 맥락을 이해합니다. 'AMRAP 20'이라는 텍스트를 보면 이것이 '20분간 가능한 많은 라운드 반복'이라는 스코어 타입임을 자동으로 인식합니다. 'For Time'이 보이면 시간 기록 방식이라는 것을, 'EMOM 10'이 보이면 매분 반복 방식이라는 것을 알아냅니다.</p>
+
+    <h3 data-ko="2. 크로스핏 전문 용어 사전" data-en="2. CrossFit Terminology Dictionary">2. 크로스핏 전문 용어 사전</h3>
+
+    <p data-ko="크로스핏AI 시스템에는 수백 개의 크로스핏 동작과 약어가 내장되어 있습니다. OCR이 'SDHP'를 인식하면 이것이 'Sumo Deadlift High Pull'이라는 것을 알고, 'MU'가 'Muscle-Up'이라는 것을 이해합니다. 또한 Rx/Scaled 구분, 남녀별 무게 표기(예: 135/95) 같은 크로스핏 특유의 표기법도 정확히 해석합니다." data-en="CrossFit AI systems have hundreds of CrossFit movements and abbreviations built in. When OCR recognizes 'SDHP', it knows it's 'Sumo Deadlift High Pull', and understands 'MU' means 'Muscle-Up'. It also accurately interprets CrossFit-specific notation like Rx/Scaled distinctions and gender-specific weights (e.g., 135/95).">크로스핏AI 시스템에는 수백 개의 크로스핏 동작과 약어가 내장되어 있습니다. OCR이 'SDHP'를 인식하면 이것이 'Sumo Deadlift High Pull'이라는 것을 알고, 'MU'가 'Muscle-Up'이라는 것을 이해합니다. 또한 Rx/Scaled 구분, 남녀별 무게 표기(예: 135/95) 같은 크로스핏 특유의 표기법도 정확히 해석합니다.</p>
+
+    <h3 data-ko="3. 자동 스코어 타입 분류" data-en="3. Automatic Score Type Classification">3. 자동 스코어 타입 분류</h3>
+
+    <p data-ko="크로스핏 WOD의 스코어링 방식은 매우 다양합니다. AI 운동 기록 시스템은 이를 자동으로 분류합니다." data-en="CrossFit WOD scoring methods are highly diverse. AI workout logging systems classify these automatically.">크로스핏 WOD의 스코어링 방식은 매우 다양합니다. AI 운동 기록 시스템은 이를 자동으로 분류합니다.</p>
+
+    <ul>
+      <li data-ko="<strong>For Time</strong>: 시간 기록 (예: 12:34)" data-en="<strong>For Time</strong>: Time record (e.g., 12:34)"><strong>For Time</strong>: 시간 기록 (예: 12:34)</li>
+      <li data-ko="<strong>AMRAP</strong>: 라운드 + 렙스 기록 (예: 8+12)" data-en="<strong>AMRAP</strong>: Rounds + reps record (e.g., 8+12)"><strong>AMRAP</strong>: 라운드 + 렙스 기록 (예: 8+12)</li>
+      <li data-ko="<strong>EMOM</strong>: 매분 반복, 완료 여부 기록" data-en="<strong>EMOM</strong>: Every minute on the minute, completion tracking"><strong>EMOM</strong>: 매분 반복, 완료 여부 기록</li>
+      <li data-ko="<strong>Max Weight</strong>: 최대 무게 기록 (예: 225 lb)" data-en="<strong>Max Weight</strong>: Maximum weight record (e.g., 225 lb)"><strong>Max Weight</strong>: 최대 무게 기록 (예: 225 lb)</li>
+      <li data-ko="<strong>Max Reps</strong>: 최대 반복 횟수 기록" data-en="<strong>Max Reps</strong>: Maximum repetition record"><strong>Max Reps</strong>: 최대 반복 횟수 기록</li>
+      <li data-ko="<strong>Tabata</strong>: 인터벌 기록" data-en="<strong>Tabata</strong>: Interval record"><strong>Tabata</strong>: 인터벌 기록</li>
+    </ul>
+
+    <p data-ko="사용자는 스코어 타입을 직접 선택할 필요 없이, AI가 WOD 내용을 분석하여 자동으로 적절한 입력 양식을 제시합니다." data-en="Users don't need to manually select the score type — the AI analyzes the WOD content and automatically presents the appropriate input form.">사용자는 스코어 타입을 직접 선택할 필요 없이, AI가 WOD 내용을 분석하여 자동으로 적절한 입력 양식을 제시합니다.</p>
+
+    <h3 data-ko="4. 1RM 자동 추적과 퍼센테이지 계산" data-en="4. Automatic 1RM Tracking and Percentage Calculation">4. 1RM 자동 추적과 퍼센테이지 계산</h3>
+
+    <p data-ko="크로스핏에서 1RM(1 Rep Max)은 매우 중요한 지표입니다. 크로스핏 AI 앱은 WOD에서 사용한 무게를 기반으로 1RM 기록을 자동 추적하고, 퍼센테이지 표를 제공하여 프로그래밍된 무게를 쉽게 계산할 수 있게 합니다. 예를 들어 백스쿼트 1RM이 140kg이라면, 오늘 WOD에 '70% Back Squat'이라고 적혀 있을 때 바로 98kg이라는 것을 알 수 있습니다." data-en="1RM (1 Rep Max) is a crucial metric in CrossFit. CrossFit AI apps automatically track 1RM records based on weights used in WODs and provide percentage tables for easy weight calculations. For example, if your back squat 1RM is 140kg and today's WOD says '70% Back Squat,' you immediately know it's 98kg.">크로스핏에서 1RM(1 Rep Max)은 매우 중요한 지표입니다. 크로스핏 AI 앱은 WOD에서 사용한 무게를 기반으로 1RM 기록을 자동 추적하고, 퍼센테이지 표를 제공하여 프로그래밍된 무게를 쉽게 계산할 수 있게 합니다. 예를 들어 백스쿼트 1RM이 140kg이라면, 오늘 WOD에 '70% Back Squat'이라고 적혀 있을 때 바로 98kg이라는 것을 알 수 있습니다.</p>
+
+    <h3 data-ko="5. 박스 커뮤니티 연동" data-en="5. Box Community Integration">5. 박스 커뮤니티 연동</h3>
+
+    <p data-ko="같은 박스에서 운동하는 멤버들의 기록을 공유하고 비교할 수 있는 것도 크로스핏 AI의 중요한 기능입니다. 같은 WOD를 수행한 박스 멤버들의 리더보드를 확인하고, 서로의 기록에 동기부여를 받을 수 있습니다. 나아가 박스 멤버가 오늘의 WOD를 기록하면, 같은 박스의 다른 멤버에게 해당 WOD를 추천해주는 기능도 가능합니다." data-en="Sharing and comparing records with fellow box members is another important CrossFit AI feature. You can check leaderboards of box members who did the same WOD and find motivation in each other's results. When a box member logs today's WOD, it can even recommend that WOD to other members of the same box.">같은 박스에서 운동하는 멤버들의 기록을 공유하고 비교할 수 있는 것도 크로스핏 AI의 중요한 기능입니다. 같은 WOD를 수행한 박스 멤버들의 리더보드를 확인하고, 서로의 기록에 동기부여를 받을 수 있습니다. 나아가 박스 멤버가 오늘의 WOD를 기록하면, 같은 박스의 다른 멤버에게 해당 WOD를 추천해주는 기능도 가능합니다.</p>
+
+    <h3 data-ko="6. 공유 카드 자동 생성" data-en="6. Auto-Generated Share Cards">6. 공유 카드 자동 생성</h3>
+
+    <p data-ko="AI 운동 기록의 또 다른 장점은 기록한 WOD를 아름다운 이미지 카드로 자동 생성하여 SNS나 메신저에 공유할 수 있다는 점입니다. 운동 결과를 멋지게 시각화하여 공유하면, 크로스핏 커뮤니티 내에서 더 활발한 소통이 가능합니다." data-en="Another advantage of AI workout logging is auto-generating beautiful image cards from your WOD records for sharing on social media or messaging apps. Visually appealing workout results enable more active communication within the CrossFit community.">AI 운동 기록의 또 다른 장점은 기록한 WOD를 아름다운 이미지 카드로 자동 생성하여 SNS나 메신저에 공유할 수 있다는 점입니다. 운동 결과를 멋지게 시각화하여 공유하면, 크로스핏 커뮤니티 내에서 더 활발한 소통이 가능합니다.</p>
+
+    <h2 data-ko="Fitter AI는 크로스핏 AI를 어떻게 구현했는가?" data-en="How Does Fitter AI Implement CrossFit AI?">Fitter AI는 크로스핏 AI를 어떻게 구현했는가?</h2>
+
+    <p data-ko="Fitter AI(핏터AI)는 크로스핏 AI 기술을 실제 앱으로 구현한 대표적인 서비스입니다. 화이트보드 사진 한 장으로 WOD를 자동 기록하는 것을 핵심 기능으로 만들었으며, 크로스핏 선수들의 실제 사용 피드백을 반영하여 지속적으로 개선하고 있습니다." data-en="Fitter AI is a leading service that implements CrossFit AI technology as a real app. It made auto-logging WODs from a single whiteboard photo its core feature, and continuously improves based on feedback from actual CrossFit athletes.">Fitter AI(핏터AI)는 크로스핏 AI 기술을 실제 앱으로 구현한 대표적인 서비스입니다. 화이트보드 사진 한 장으로 WOD를 자동 기록하는 것을 핵심 기능으로 만들었으며, 크로스핏 선수들의 실제 사용 피드백을 반영하여 지속적으로 개선하고 있습니다.</p>
+
+    <h3 data-ko="Fitter AI의 WOD 기록 흐름" data-en="Fitter AI's WOD Logging Flow">Fitter AI의 WOD 기록 흐름</h3>
+
+    <p data-ko="Fitter AI에서 WOD를 기록하는 과정은 놀라울 정도로 간단합니다." data-en="The WOD logging process in Fitter AI is remarkably simple.">Fitter AI에서 WOD를 기록하는 과정은 놀라울 정도로 간단합니다.</p>
+
+    <ol>
+      <li data-ko="<strong>화이트보드 사진 촬영</strong>: 앱에서 카메라를 열어 화이트보드를 찍거나, 갤러리에서 이미 찍어둔 사진을 선택합니다." data-en="<strong>Take a whiteboard photo</strong>: Open the camera in the app to photograph the whiteboard, or select an existing photo from your gallery."><strong>화이트보드 사진 촬영</strong>: 앱에서 카메라를 열어 화이트보드를 찍거나, 갤러리에서 이미 찍어둔 사진을 선택합니다.</li>
+      <li data-ko="<strong>크롭 영역 선택</strong>: 사진에서 WOD가 적힌 영역을 손가락으로 드래그하여 선택합니다. 필요 없는 부분(다른 날의 WOD, 공지사항 등)을 제외하면 인식 정확도가 높아집니다." data-en="<strong>Select crop area</strong>: Drag to select the WOD area in the photo. Excluding unnecessary parts (other days' WODs, announcements) improves recognition accuracy."><strong>크롭 영역 선택</strong>: 사진에서 WOD가 적힌 영역을 손가락으로 드래그하여 선택합니다. 필요 없는 부분(다른 날의 WOD, 공지사항 등)을 제외하면 인식 정확도가 높아집니다.</li>
+      <li data-ko="<strong>AI 자동 분석</strong>: 크롭된 이미지를 서버로 전송하면, OCR + AI 분석이 수 초 내에 완료됩니다. 운동 이름, 동작 목록, 스코어 타입이 자동으로 채워집니다." data-en="<strong>AI auto-analysis</strong>: The cropped image is sent to the server, and OCR + AI analysis completes within seconds. Workout name, movement list, and score type are auto-filled."><strong>AI 자동 분석</strong>: 크롭된 이미지를 서버로 전송하면, OCR + AI 분석이 수 초 내에 완료됩니다. 운동 이름, 동작 목록, 스코어 타입이 자동으로 채워집니다.</li>
+      <li data-ko="<strong>결과 입력 및 저장</strong>: AI가 분석한 WOD 내용을 확인하고, 자신의 결과(시간, 라운드 등)와 Rx/Scaled 여부를 입력한 뒤 저장합니다." data-en="<strong>Enter results and save</strong>: Review the AI-analyzed WOD content, enter your result (time, rounds, etc.) and Rx/Scaled status, then save."><strong>결과 입력 및 저장</strong>: AI가 분석한 WOD 내용을 확인하고, 자신의 결과(시간, 라운드 등)와 Rx/Scaled 여부를 입력한 뒤 저장합니다.</li>
+      <li data-ko="<strong>공유하기</strong>: 원하면 공유 카드를 생성하여 인스타그램 스토리, 카카오톡 등으로 공유할 수 있습니다." data-en="<strong>Share</strong>: Optionally generate a share card for Instagram Stories, KakaoTalk, etc."><strong>공유하기</strong>: 원하면 공유 카드를 생성하여 인스타그램 스토리, 카카오톡 등으로 공유할 수 있습니다.</li>
+    </ol>
+
+    <div class="tip-box" data-ko="<strong>팁:</strong> 화이트보드를 촬영할 때, 정면에서 수평으로 찍으면 OCR 인식 정확도가 가장 높습니다. 조명 반사가 심한 경우, 약간 비스듬한 각도에서 촬영하되 글자가 선명하게 보이는 위치를 찾아보세요." data-en="<strong>Tip:</strong> For best OCR accuracy, photograph the whiteboard straight on and level. If there's heavy glare, try a slight angle while ensuring the text remains clearly visible."><strong>팁:</strong> 화이트보드를 촬영할 때, 정면에서 수평으로 찍으면 OCR 인식 정확도가 가장 높습니다. 조명 반사가 심한 경우, 약간 비스듬한 각도에서 촬영하되 글자가 선명하게 보이는 위치를 찾아보세요.</div>
+
+    <h3 data-ko="Fitter AI의 차별화된 기술" data-en="Fitter AI's Differentiating Technology">Fitter AI의 차별화된 기술</h3>
+
+    <p data-ko="Fitter AI가 다른 일반 운동 기록 앱과 다른 점은 크로스핏에 특화된 AI 기술을 보유하고 있다는 것입니다." data-en="What sets Fitter AI apart from other generic fitness apps is its CrossFit-specialized AI technology.">Fitter AI가 다른 일반 운동 기록 앱과 다른 점은 크로스핏에 특화된 AI 기술을 보유하고 있다는 것입니다.</p>
+
+    <p data-ko="<strong>Adaptive 줄 재구성 알고리즘</strong>: OCR 엔진이 추출한 단어들의 좌표를 분석하여, 손글씨의 수직 편차에도 불구하고 같은 줄의 단어들을 정확하게 묶어줍니다. 글자 높이의 중앙값을 기반으로 동적 임계값(threshold)을 설정하기 때문에, 크게 쓴 글씨든 작게 쓴 글씨든 정확하게 줄을 구분합니다." data-en="<strong>Adaptive line reconstruction algorithm</strong>: Analyzes word coordinates from the OCR engine to accurately group words on the same line despite handwriting's vertical variance. Dynamic thresholds based on median character height ensure accurate line separation for both large and small handwriting."><strong>Adaptive 줄 재구성 알고리즘</strong>: OCR 엔진이 추출한 단어들의 좌표를 분석하여, 손글씨의 수직 편차에도 불구하고 같은 줄의 단어들을 정확하게 묶어줍니다. 글자 높이의 중앙값을 기반으로 동적 임계값(threshold)을 설정하기 때문에, 크게 쓴 글씨든 작게 쓴 글씨든 정확하게 줄을 구분합니다.</p>
+
+    <p data-ko="<strong>크로스핏 맥락 AI 분석</strong>: 단순 OCR 결과를 넘어서, 크로스핏 WOD의 구조를 이해하는 AI 모델이 운동 이름, 동작, 반복 횟수, 무게, 스코어 타입을 자동으로 파싱합니다. 벤치마크 WOD(Fran, Murph, Grace 등)도 자동으로 인식합니다." data-en="<strong>CrossFit-context AI analysis</strong>: Beyond simple OCR results, an AI model that understands CrossFit WOD structure automatically parses workout names, movements, rep counts, weights, and score types. Benchmark WODs (Fran, Murph, Grace, etc.) are automatically recognized."><strong>크로스핏 맥락 AI 분석</strong>: 단순 OCR 결과를 넘어서, 크로스핏 WOD의 구조를 이해하는 AI 모델이 운동 이름, 동작, 반복 횟수, 무게, 스코어 타입을 자동으로 파싱합니다. 벤치마크 WOD(Fran, Murph, Grace 등)도 자동으로 인식합니다.</p>
+
+    <p data-ko="<strong>박스 WOD 추천</strong>: 같은 박스 소속 멤버가 오늘의 WOD를 기록하면, 다른 멤버의 홈 화면에 해당 WOD를 추천해줍니다. 추천을 탭하면 WOD 내용이 미리 채워진 상태로 기록 화면이 열리므로, 사진을 찍지 않아도 바로 기록을 시작할 수 있습니다." data-en="<strong>Box WOD recommendation</strong>: When a box member logs today's WOD, it's recommended to other members on their home screen. Tapping the recommendation opens the logging screen with WOD content pre-filled, so you can start recording without even taking a photo."><strong>박스 WOD 추천</strong>: 같은 박스 소속 멤버가 오늘의 WOD를 기록하면, 다른 멤버의 홈 화면에 해당 WOD를 추천해줍니다. 추천을 탭하면 WOD 내용이 미리 채워진 상태로 기록 화면이 열리므로, 사진을 찍지 않아도 바로 기록을 시작할 수 있습니다.</p>
+
+    <p data-ko="<strong>1RM 추적과 성장 차트</strong>: 10개의 기본 종목(백스쿼트, 프론트스쿼트, 데드리프트, 클린, 저크 등)과 커스텀 종목의 1RM을 추적하며, 시간에 따른 성장 추이를 라인 차트로 시각화합니다. 퍼센테이지 테이블도 제공하여, WOD에서 퍼센테이지 기반 무게를 쉽게 계산할 수 있습니다." data-en="<strong>1RM tracking and growth charts</strong>: Track 1RM for 10 default lifts (back squat, front squat, deadlift, clean, jerk, etc.) and custom lifts, with line charts visualizing progress over time. Percentage tables help you easily calculate percentage-based weights for WODs."><strong>1RM 추적과 성장 차트</strong>: 10개의 기본 종목(백스쿼트, 프론트스쿼트, 데드리프트, 클린, 저크 등)과 커스텀 종목의 1RM을 추적하며, 시간에 따른 성장 추이를 라인 차트로 시각화합니다. 퍼센테이지 테이블도 제공하여, WOD에서 퍼센테이지 기반 무게를 쉽게 계산할 수 있습니다.</p>
+
+    <h2 data-ko="크로스핏 AI가 바꾸는 운동 습관" data-en="How CrossFit AI Changes Your Training Habits">크로스핏 AI가 바꾸는 운동 습관</h2>
+
+    <p data-ko="크로스핏 AI 기술이 단순히 기록을 편하게 해주는 것을 넘어서, 실제로 운동 습관 자체를 변화시키는 효과가 있습니다." data-en="CrossFit AI technology goes beyond making logging convenient — it actually transforms your training habits.">크로스핏 AI 기술이 단순히 기록을 편하게 해주는 것을 넘어서, 실제로 운동 습관 자체를 변화시키는 효과가 있습니다.</p>
+
+    <h3 data-ko="꾸준한 기록이 만드는 성장" data-en="Growth Through Consistent Logging">꾸준한 기록이 만드는 성장</h3>
+
+    <p data-ko="운동 기록의 가장 큰 적은 '귀찮음'입니다. 아무리 좋은 기록 앱이 있어도, 매일 WOD 내용을 타이핑하는 것은 결국 귀찮아지기 마련입니다. 하지만 AI 운동 기록은 사진 한 장이면 끝이기 때문에, 기록의 허들이 극적으로 낮아집니다." data-en="The biggest enemy of workout logging is 'inconvenience.' No matter how good a logging app is, typing WOD content daily inevitably becomes tedious. But AI workout logging only requires a single photo, dramatically lowering the barrier to consistent logging.">운동 기록의 가장 큰 적은 '귀찮음'입니다. 아무리 좋은 기록 앱이 있어도, 매일 WOD 내용을 타이핑하는 것은 결국 귀찮아지기 마련입니다. 하지만 AI 운동 기록은 사진 한 장이면 끝이기 때문에, 기록의 허들이 극적으로 낮아집니다.</p>
+
+    <p data-ko="크로스핏에서 성장을 확인하려면 데이터가 필요합니다. 3개월 전 'Fran' 기록이 4:52였는데 오늘은 3:48이라면, 확실한 성장을 숫자로 확인할 수 있습니다. 이런 데이터는 꾸준한 기록 없이는 얻을 수 없고, 크로스핏 AI는 바로 이 '꾸준함'을 가능하게 합니다." data-en="You need data to verify progress in CrossFit. If your 'Fran' time was 4:52 three months ago and 3:48 today, you can confirm growth with hard numbers. This data is impossible without consistent logging, and CrossFit AI makes that consistency possible.">크로스핏에서 성장을 확인하려면 데이터가 필요합니다. 3개월 전 'Fran' 기록이 4:52였는데 오늘은 3:48이라면, 확실한 성장을 숫자로 확인할 수 있습니다. 이런 데이터는 꾸준한 기록 없이는 얻을 수 없고, 크로스핏 AI는 바로 이 '꾸준함'을 가능하게 합니다.</p>
+
+    <h3 data-ko="커뮤니티와 동기부여" data-en="Community and Motivation">커뮤니티와 동기부여</h3>
+
+    <p data-ko="크로스핏의 가장 큰 매력 중 하나는 커뮤니티입니다. 크로스핏AI 앱은 이 커뮤니티 경험을 디지털로 확장합니다. 같은 박스의 멤버들이 오늘 어떤 WOD를 했는지 확인하고, 리더보드에서 순위를 비교하며, 친구의 기록에 자극을 받을 수 있습니다. 운동이 끝난 후에도 커뮤니티의 에너지를 이어갈 수 있는 것이 크로스핏 AI 앱의 강점입니다." data-en="One of CrossFit's greatest appeals is its community. CrossFit AI apps extend this community experience digitally. See what WOD your box members did today, compare rankings on leaderboards, and find motivation in friends' records. The strength of CrossFit AI apps is maintaining community energy even after the workout ends.">크로스핏의 가장 큰 매력 중 하나는 커뮤니티입니다. 크로스핏AI 앱은 이 커뮤니티 경험을 디지털로 확장합니다. 같은 박스의 멤버들이 오늘 어떤 WOD를 했는지 확인하고, 리더보드에서 순위를 비교하며, 친구의 기록에 자극을 받을 수 있습니다. 운동이 끝난 후에도 커뮤니티의 에너지를 이어갈 수 있는 것이 크로스핏 AI 앱의 강점입니다.</p>
+
+    <h3 data-ko="데이터 기반 훈련 결정" data-en="Data-Driven Training Decisions">데이터 기반 훈련 결정</h3>
+
+    <p data-ko="AI 운동 기록으로 쌓인 데이터는 더 나은 훈련 결정을 가능하게 합니다. 어떤 유형의 WOD에서 강한지, 어떤 동작에서 약한지, 1RM이 어떻게 변화하고 있는지를 데이터로 확인하면, 보충 훈련의 방향을 명확하게 설정할 수 있습니다. 코치에게 자신의 기록을 보여주면서 프로그래밍 조언을 구하기도 훨씬 수월해집니다." data-en="Data accumulated through AI workout logging enables better training decisions. When you can see which WOD types you're strong in, which movements need work, and how your 1RM is trending, you can clearly set supplementary training directions. It also makes it much easier to show your records to coaches and ask for programming advice.">AI 운동 기록으로 쌓인 데이터는 더 나은 훈련 결정을 가능하게 합니다. 어떤 유형의 WOD에서 강한지, 어떤 동작에서 약한지, 1RM이 어떻게 변화하고 있는지를 데이터로 확인하면, 보충 훈련의 방향을 명확하게 설정할 수 있습니다. 코치에게 자신의 기록을 보여주면서 프로그래밍 조언을 구하기도 훨씬 수월해집니다.</p>
+
+    <h2 data-ko="크로스핏 AI 시작하기: 실전 가이드" data-en="Getting Started with CrossFit AI: A Practical Guide">크로스핏 AI 시작하기: 실전 가이드</h2>
+
+    <p data-ko="크로스핏 AI를 처음 사용하시는 분들을 위해, 최대한 효과적으로 활용하는 방법을 안내합니다." data-en="For those new to CrossFit AI, here's how to use it most effectively.">크로스핏 AI를 처음 사용하시는 분들을 위해, 최대한 효과적으로 활용하는 방법을 안내합니다.</p>
+
+    <h3 data-ko="좋은 화이트보드 사진을 찍는 법" data-en="How to Take a Good Whiteboard Photo">좋은 화이트보드 사진을 찍는 법</h3>
+
+    <ul>
+      <li data-ko="<strong>정면에서 촬영</strong>: 가능한 한 화이트보드 정면에서, 수평으로 맞춰 촬영합니다." data-en="<strong>Shoot from the front</strong>: Photograph from directly in front of the whiteboard, keeping the camera level."><strong>정면에서 촬영</strong>: 가능한 한 화이트보드 정면에서, 수평으로 맞춰 촬영합니다.</li>
+      <li data-ko="<strong>글자가 선명하게</strong>: 글자가 흐리거나 잘리지 않도록 충분히 가까이에서 찍되, WOD 전체가 프레임 안에 들어오도록 합니다." data-en="<strong>Keep text sharp</strong>: Get close enough for clear text while keeping the entire WOD in frame."><strong>글자가 선명하게</strong>: 글자가 흐리거나 잘리지 않도록 충분히 가까이에서 찍되, WOD 전체가 프레임 안에 들어오도록 합니다.</li>
+      <li data-ko="<strong>반사 피하기</strong>: 형광등이 화이트보드에 직접 반사되는 각도를 피합니다. 살짝 비스듬한 각도가 나을 수 있습니다." data-en="<strong>Avoid glare</strong>: Avoid angles where fluorescent lights directly reflect off the whiteboard. A slight angle may work better."><strong>반사 피하기</strong>: 형광등이 화이트보드에 직접 반사되는 각도를 피합니다. 살짝 비스듬한 각도가 나을 수 있습니다.</li>
+      <li data-ko="<strong>크롭 활용</strong>: 화이트보드에 여러 날의 WOD가 적혀 있다면, 앱의 크롭 기능을 활용하여 오늘의 WOD 부분만 선택합니다." data-en="<strong>Use cropping</strong>: If the whiteboard has multiple days' WODs, use the app's crop feature to select only today's WOD."><strong>크롭 활용</strong>: 화이트보드에 여러 날의 WOD가 적혀 있다면, 앱의 크롭 기능을 활용하여 오늘의 WOD 부분만 선택합니다.</li>
+    </ul>
+
+    <h3 data-ko="AI 분석 결과 확인하기" data-en="Reviewing AI Analysis Results">AI 분석 결과 확인하기</h3>
+
+    <p data-ko="AI가 아무리 정확해도, 항상 결과를 한 번 확인하는 습관을 들이는 것이 좋습니다. 특히 다음 항목들을 체크하세요." data-en="No matter how accurate the AI is, it's good practice to always review results once. Check these items in particular.">AI가 아무리 정확해도, 항상 결과를 한 번 확인하는 습관을 들이는 것이 좋습니다. 특히 다음 항목들을 체크하세요.</p>
+
+    <ul>
+      <li data-ko="운동 이름이 정확한지" data-en="Is the workout name correct?">운동 이름이 정확한지</li>
+      <li data-ko="스코어 타입이 맞는지 (For Time? AMRAP? EMOM?)" data-en="Is the score type correct? (For Time? AMRAP? EMOM?)">스코어 타입이 맞는지 (For Time? AMRAP? EMOM?)</li>
+      <li data-ko="동작과 반복 횟수가 정확한지" data-en="Are the movements and rep counts accurate?">동작과 반복 횟수가 정확한지</li>
+      <li data-ko="무게 표기가 올바른지" data-en="Are the weight notations correct?">무게 표기가 올바른지</li>
+    </ul>
+
+    <p data-ko="Fitter AI는 분석 결과를 편집할 수 있는 화면을 제공하므로, 필요한 부분만 수정하면 됩니다. 전체를 처음부터 입력하는 것보다 훨씬 빠릅니다." data-en="Fitter AI provides an editing screen for analysis results, so you only need to correct what's needed. It's much faster than entering everything from scratch.">Fitter AI는 분석 결과를 편집할 수 있는 화면을 제공하므로, 필요한 부분만 수정하면 됩니다. 전체를 처음부터 입력하는 것보다 훨씬 빠릅니다.</p>
+
+    <h2 data-ko="크로스핏 AI의 미래" data-en="The Future of CrossFit AI">크로스핏 AI의 미래</h2>
+
+    <p data-ko="크로스핏 AI 기술은 아직 초기 단계이며, 앞으로 더 많은 발전이 예상됩니다." data-en="CrossFit AI technology is still in its early stages, with much more development expected.">크로스핏 AI 기술은 아직 초기 단계이며, 앞으로 더 많은 발전이 예상됩니다.</p>
+
+    <ul>
+      <li data-ko="<strong>개인화된 WOD 추천</strong>: 축적된 운동 기록을 바탕으로 부족한 영역을 파악하고, 맞춤형 보충 운동을 추천하는 기능" data-en="<strong>Personalized WOD recommendations</strong>: Identifying weak areas based on accumulated records and recommending customized supplementary workouts"><strong>개인화된 WOD 추천</strong>: 축적된 운동 기록을 바탕으로 부족한 영역을 파악하고, 맞춤형 보충 운동을 추천하는 기능</li>
+      <li data-ko="<strong>부상 예방 분석</strong>: 과도한 훈련량, 편중된 동작 패턴 등을 AI가 감지하여 부상 위험을 사전에 알려주는 기능" data-en="<strong>Injury prevention analysis</strong>: AI detecting excessive training volume or imbalanced movement patterns to warn of injury risks"><strong>부상 예방 분석</strong>: 과도한 훈련량, 편중된 동작 패턴 등을 AI가 감지하여 부상 위험을 사전에 알려주는 기능</li>
+      <li data-ko="<strong>실시간 동작 분석</strong>: 카메라로 운동 동작을 촬영하면 AI가 자세를 분석하고 피드백을 제공하는 기능" data-en="<strong>Real-time movement analysis</strong>: AI analyzing form and providing feedback when filming exercises with a camera"><strong>실시간 동작 분석</strong>: 카메라로 운동 동작을 촬영하면 AI가 자세를 분석하고 피드백을 제공하는 기능</li>
+      <li data-ko="<strong>크로스 박스간 데이터 연동</strong>: 여러 박스를 방문하는 드롭인(drop-in) 선수들의 기록을 통합 관리하는 기능" data-en="<strong>Cross-box data integration</strong>: Unified record management for drop-in athletes who visit multiple boxes"><strong>크로스 박스간 데이터 연동</strong>: 여러 박스를 방문하는 드롭인(drop-in) 선수들의 기록을 통합 관리하는 기능</li>
+    </ul>
+
+    <h2 data-ko="마치며" data-en="Conclusion">마치며</h2>
+
+    <p data-ko="<strong>크로스핏 AI</strong>는 크로스핏 선수들이 오랫동안 겪어온 운동 기록의 불편함을 근본적으로 해결하는 기술입니다. 화이트보드 사진 한 장으로 WOD를 자동 기록하고, 구조화된 데이터로 성장을 추적하며, 박스 커뮤니티와 연결되는 경험은 크로스핏 라이프를 한 단계 업그레이드해줍니다." data-en="<strong>CrossFit AI</strong> is technology that fundamentally solves the workout logging inconveniences that CrossFit athletes have long endured. Auto-logging WODs from a single whiteboard photo, tracking progress with structured data, and connecting with your box community takes your CrossFit life to the next level."><strong>크로스핏 AI</strong>는 크로스핏 선수들이 오랫동안 겪어온 운동 기록의 불편함을 근본적으로 해결하는 기술입니다. 화이트보드 사진 한 장으로 WOD를 자동 기록하고, 구조화된 데이터로 성장을 추적하며, 박스 커뮤니티와 연결되는 경험은 크로스핏 라이프를 한 단계 업그레이드해줍니다.</p>
+
+    <p data-ko="아직도 수기로 운동을 기록하고 계신가요? 이제 AI 운동 기록의 편리함을 직접 경험해보세요. Fitter AI는 무료로 사용할 수 있으며, iOS와 Android 모두 지원합니다." data-en="Still logging workouts manually? Experience the convenience of AI workout logging for yourself. Fitter AI is free to use and supports both iOS and Android.">아직도 수기로 운동을 기록하고 계신가요? 이제 AI 운동 기록의 편리함을 직접 경험해보세요. Fitter AI는 무료로 사용할 수 있으며, iOS와 Android 모두 지원합니다.</p>
+
+    <div class="cta-box">
+      <h3 data-ko="크로스핏 AI로 운동 기록을 시작하세요" data-en="Start AI Workout Tracking Today">크로스핏 AI로 운동 기록을 시작하세요</h3>
+      <p data-ko="화이트보드 사진 한 장이면 AI가 알아서 기록합니다" data-en="Just snap the whiteboard — AI does the rest">화이트보드 사진 한 장이면 AI가 알아서 기록합니다</p>
+      <a href="../index.html#download" class="cta-btn" data-ko="무료 다운로드" data-en="Free Download">무료 다운로드</a>
+    </div>
+  </div>
+
+  <div class="related">
+    <h3 data-ko="관련 글" data-en="Related Posts">관련 글</h3>
+    <div class="related-list">
+      <a href="crossfit-workout-tracking.html" data-ko="크로스핏 운동 기록, 왜 해야 할까? 효과적인 기록 방법 5가지" data-en="Why Track CrossFit Workouts? 5 Effective Methods">크로스핏 운동 기록, 왜 해야 할까? 효과적인 기록 방법 5가지</a>
+      <a href="1rm-tracking-guide.html" data-ko="1RM이란? 크로스핏에서 1RM을 추적해야 하는 이유" data-en="What is 1RM? Why Track It in CrossFit?">1RM이란? 크로스핏에서 1RM을 추적해야 하는 이유</a>
+      <a href="crossfit-box-community.html" data-ko="크로스핏 박스 커뮤니티의 힘: 함께 운동하면 더 강해지는 이유" data-en="The Power of CrossFit Box Community">크로스핏 박스 커뮤니티의 힘: 함께 운동하면 더 강해지는 이유</a>
+    </div>
+  </div>
+</article>
+
+<script>
+let lang=localStorage.getItem('lang')||'ko';
+if(lang==='en')applyLang('en');
+function toggleLang(){lang=lang==='ko'?'en':'ko';localStorage.setItem('lang',lang);applyLang(lang)}
+function applyLang(l){document.querySelectorAll('[data-ko]').forEach(el=>{const t=el.getAttribute('data-'+l);if(t)el.innerHTML=t});document.querySelector('.lang-btn').textContent=l==='ko'?'EN':'한국어';document.documentElement.lang=l}
+</script>
+</body>
+</html>
