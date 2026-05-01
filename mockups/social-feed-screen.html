@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Feed Screen — Fitter AI</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 390px;
+    height: 844px;
+    background: #F5F7FA;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Pretendard', sans-serif;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Status bar */
+  .status-bar {
+    height: 54px;
+    background: #F5F7FA;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-left: 28px;
+    padding-right: 28px;
+    flex-shrink: 0;
+  }
+  .notch {
+    width: 126px; height: 34px;
+    background: #1A1F36;
+    border-radius: 22px;
+    position: absolute;
+    top: 10px;
+    left: 132px;
+  }
+  .status-left {
+    font-size: 15px; font-weight: 600; color: #1A1A1A;
+    position: absolute; left: 28px; top: 18px;
+  }
+  .status-right {
+    position: absolute; right: 28px; top: 18px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .signal-icon {
+    display: flex; gap: 2px; align-items: flex-end;
+  }
+  .signal-bar {
+    width: 3px; background: #1A1A1A; border-radius: 1px;
+  }
+  .battery {
+    width: 25px; height: 12px;
+    border: 1.5px solid #1A1A1A;
+    border-radius: 3px;
+    position: relative;
+    display: flex; align-items: center; padding: 2px;
+  }
+  .battery::after {
+    content: '';
+    position: absolute; right: -5px; top: 50%; transform: translateY(-50%);
+    width: 2px; height: 6px;
+    background: #1A1A1A; border-radius: 0 1px 1px 0;
+  }
+  .battery-fill {
+    height: 100%; background: #1A1A1A; border-radius: 1px;
+    width: 70%;
+  }
+
+  /* Screen content */
+  .screen {
+    height: calc(844px - 54px - 56px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 20px 20px;
+  }
+  .screen::-webkit-scrollbar { display: none; }
+
+  /* Header */
+  .header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 0 18px;
+  }
+  .header-title { font-size: 22px; font-weight: 700; color: #1A1A1A; letter-spacing: -0.4px; }
+  .header-avatar {
+    width: 38px; height: 38px; border-radius: 19px;
+    background: linear-gradient(135deg, #2196F3, #1565C0);
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 16px; font-weight: 700;
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: 11px; font-weight: 600; color: #9CA3AF;
+    letter-spacing: 0.8px; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  /* === WodGroupCard === */
+  .group-title-outside {
+    font-size: 13px; font-weight: 600; color: #6B7280;
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 5px;
+  }
+
+  .wod-group-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .wgc-top {
+    padding: 14px 16px 12px;
+  }
+  .wgc-box-row {
+    display: flex; align-items: center; gap: 6px;
+    margin-bottom: 10px;
+  }
+  .wgc-box-icon {
+    width: 18px; height: 18px;
+    color: #9CA3AF; font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .wgc-box-name { font-size: 12px; color: #9CA3AF; font-weight: 500; }
+
+  .wgc-wod-area {
+    background: #F5F7FA;
+    border-radius: 10px;
+    padding: 11px 13px;
+    margin-bottom: 12px;
+  }
+  .wgc-wod-title {
+    font-size: 13px; font-weight: 700; color: #1A1A1A;
+    margin-bottom: 5px; letter-spacing: -0.1px;
+  }
+  .wgc-wod-text {
+    font-size: 12px; color: #374151; line-height: 1.65;
+    font-family: 'Courier New', 'SF Mono', monospace; font-weight: 500;
+  }
+
+  .wgc-divider { height: 1px; background: #F0F1F3; margin: 0 16px 12px; }
+
+  .wgc-participants {
+    padding: 0 16px 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .wgc-avatars {
+    display: flex;
+    flex-direction: row;
+  }
+  .wgc-avatar {
+    width: 28px; height: 28px; border-radius: 14px;
+    border: 2px solid white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: white;
+    margin-right: -6px;
+    flex-shrink: 0;
+  }
+  .wgc-avatar:last-child { margin-right: 0; }
+  .wgc-participant-text {
+    font-size: 13px; color: #374151; line-height: 1.4;
+    flex: 1;
+  }
+  .wgc-participant-text strong { color: #1A1A1A; font-weight: 700; }
+
+  .wgc-cta {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    background: #1A1F36; color: white;
+    margin: 0 16px 14px;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px; font-weight: 700; letter-spacing: -0.1px;
+  }
+
+  /* === WodRankingCard === */
+  .wod-ranking-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .wrc-header {
+    padding: 14px 16px 12px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .wrc-title { font-size: 14px; font-weight: 700; color: #1A1A1A; }
+  .wrc-wod-name {
+    font-size: 11px; font-weight: 600; color: #2196F3;
+    background: #E3F2FD; padding: 2px 8px; border-radius: 8px;
+  }
+
+  .wrc-divider { height: 1px; background: #F0F1F3; }
+
+  .wrc-row {
+    display: flex; align-items: center;
+    padding: 11px 16px;
+    gap: 10px;
+    border-bottom: 1px solid #F0F1F3;
+  }
+  .wrc-row:last-child { border-bottom: none; }
+  .wrc-row.me {
+    background: #EBF5FF;
+  }
+
+  .wrc-medal { font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
+  .wrc-rank { font-size: 13px; font-weight: 600; color: #6B7280; width: 24px; text-align: center; flex-shrink: 0; }
+
+  .wrc-avatar {
+    width: 32px; height: 32px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: white;
+    flex-shrink: 0;
+  }
+  .wrc-name-col { flex: 1; min-width: 0; }
+  .wrc-name {
+    font-size: 14px; font-weight: 600; color: #1A1A1A;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .wrc-rx {
+    font-size: 10px; font-weight: 700; color: #2196F3;
+    background: #E3F2FD; padding: 1px 6px; border-radius: 5px;
+    display: inline-block; margin-top: 1px;
+  }
+  .wrc-score {
+    font-size: 15px; font-weight: 700; color: #1A1A1A;
+    flex-shrink: 0; letter-spacing: -0.3px;
+  }
+  .wrc-row.me .wrc-score { color: #1565C0; }
+  .wrc-me-badge {
+    font-size: 10px; font-weight: 700; color: #2196F3;
+    background: #BBDEFB; padding: 1px 6px; border-radius: 5px;
+  }
+
+  /* === WorkoutCard (single) === */
+  .workout-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .wc-top {
+    display: flex; align-items: flex-start;
+    gap: 10px; margin-bottom: 10px;
+  }
+  .wc-avatar {
+    width: 36px; height: 36px; border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; color: white;
+    flex-shrink: 0;
+  }
+  .wc-user-col { flex: 1; }
+  .wc-name { font-size: 14px; font-weight: 600; color: #1A1A1A; }
+  .wc-time { font-size: 12px; color: #9CA3AF; margin-top: 1px; }
+  .wc-date-badge {
+    font-size: 10px; font-weight: 600;
+    background: #E3F2FD; color: #2196F3;
+    padding: 2px 8px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .wc-wod-box {
+    background: #F5F7FA; border-radius: 10px;
+    padding: 10px 12px; margin-bottom: 10px;
+  }
+  .wc-wod-title { font-size: 12px; font-weight: 700; color: #2196F3; margin-bottom: 3px; }
+  .wc-wod-text {
+    font-size: 12px; color: #374151; line-height: 1.5;
+    font-family: 'Courier New', monospace;
+  }
+  .wc-result-row {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .wc-result-label { font-size: 11px; color: #9CA3AF; font-weight: 500; }
+  .wc-result-value { font-size: 18px; font-weight: 700; color: #1A1A1A; letter-spacing: -0.5px; }
+  .wc-rx-badge {
+    font-size: 10px; font-weight: 700; color: #2196F3;
+    background: #E3F2FD; padding: 2px 8px; border-radius: 6px;
+  }
+
+  /* Bottom tab bar */
+  .tab-bar {
+    height: 56px;
+    background: white;
+    border-top: 1px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    flex-shrink: 0;
+  }
+  .tab-item {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 3px;
+    padding: 6px 0;
+  }
+  .tab-icon { font-size: 22px; }
+  .tab-label { font-size: 9px; font-weight: 600; color: #9CA3AF; letter-spacing: 0.2px; }
+  .tab-item.active .tab-label { color: #2196F3; }
+  .tab-active-dot {
+    width: 4px; height: 4px; border-radius: 2px;
+    background: #2196F3;
+  }
+</style>
+</head>
+<body>
+
+<!-- Status Bar -->
+<div class="status-bar" style="position:relative;">
+  <span class="status-left">9:41</span>
+  <div class="notch"></div>
+  <div class="status-right">
+    <div class="signal-icon">
+      <div class="signal-bar" style="height:4px;"></div>
+      <div class="signal-bar" style="height:6px;"></div>
+      <div class="signal-bar" style="height:9px;"></div>
+      <div class="signal-bar" style="height:12px;"></div>
+    </div>
+    <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+      <path d="M8 2.4C10.4 2.4 12.6 3.4 14.1 5L15.5 3.6C13.6 1.7 11 0.5 8 0.5C5 0.5 2.4 1.7 0.5 3.6L1.9 5C3.4 3.4 5.6 2.4 8 2.4Z" fill="#1A1A1A"/>
+      <path d="M8 5.6C9.6 5.6 11.1 6.3 12.1 7.4L13.5 6C12.1 4.6 10.2 3.7 8 3.7C5.8 3.7 3.9 4.6 2.5 6L3.9 7.4C4.9 6.3 6.4 5.6 8 5.6Z" fill="#1A1A1A"/>
+      <circle cx="8" cy="10" r="1.5" fill="#1A1A1A"/>
+    </svg>
+    <div class="battery">
+      <div class="battery-fill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Screen Content -->
+<div class="screen">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-title">최근 활동</div>
+    <div class="header-avatar">W</div>
+  </div>
+
+  <!-- Section label -->
+  <div class="section-label">친구 피드</div>
+
+  <!-- WodGroupCard -->
+  <div class="group-title-outside">📅 오늘의 운동</div>
+  <div class="wod-group-card">
+    <div class="wgc-top">
+      <div class="wgc-box-row">
+        <div class="wgc-box-icon">📍</div>
+        <div class="wgc-box-name">CrossFit Gangnam</div>
+      </div>
+      <div class="wgc-wod-area">
+        <div class="wgc-wod-title">Fran</div>
+        <div class="wgc-wod-text">21-15-9
+Thrusters (43 kg)
+Pull-ups
+
+*For Time</div>
+      </div>
+    </div>
+    <div class="wgc-divider"></div>
+    <div class="wgc-participants">
+      <div class="wgc-avatars">
+        <div class="wgc-avatar" style="background:#2196F3;">J</div>
+        <div class="wgc-avatar" style="background:#FF9500;">S</div>
+        <div class="wgc-avatar" style="background:#4CAF50;">M</div>
+      </div>
+      <div class="wgc-participant-text">
+        <strong>Jiwon</strong>님이 먼저 등록 &nbsp;·&nbsp; <strong>3명</strong> 참여
+      </div>
+    </div>
+    <div class="wgc-cta">
+      <span>▶</span>
+      <span>나도 기록하기</span>
+    </div>
+  </div>
+
+  <!-- WodRankingCard -->
+  <div class="wod-ranking-card">
+    <div class="wrc-header">
+      <div class="wrc-title">Fran 순위</div>
+      <div class="wrc-wod-name">For Time</div>
+    </div>
+    <div class="wrc-divider"></div>
+    <div class="wrc-row">
+      <div class="wrc-medal">🥇</div>
+      <div class="wrc-avatar" style="background:#2196F3;">J</div>
+      <div class="wrc-name-col">
+        <div class="wrc-name">Jiwon</div>
+        <span class="wrc-rx">Rx</span>
+      </div>
+      <div class="wrc-score">3:42</div>
+    </div>
+    <div class="wrc-row me">
+      <div class="wrc-medal">🥈</div>
+      <div class="wrc-avatar" style="background:#1A1F36;">W</div>
+      <div class="wrc-name-col">
+        <div class="wrc-name">나 (Walter)</div>
+        <span class="wrc-rx">Rx</span>
+      </div>
+      <div class="wrc-score">4:10</div>
+      <span class="wrc-me-badge">나</span>
+    </div>
+    <div class="wrc-row">
+      <div class="wrc-medal">🥉</div>
+      <div class="wrc-avatar" style="background:#FF9500;">S</div>
+      <div class="wrc-name-col">
+        <div class="wrc-name">Sunghwan</div>
+        <span class="wrc-rx">Scaled</span>
+      </div>
+      <div class="wrc-score">5:28</div>
+    </div>
+  </div>
+
+  <!-- WorkoutCard (single) -->
+  <div class="section-label" style="margin-top:4px;">최근 기록</div>
+  <div class="workout-card">
+    <div class="wc-top">
+      <div class="wc-avatar" style="background:#4CAF50;">M</div>
+      <div class="wc-user-col">
+        <div class="wc-name">Minju</div>
+        <div class="wc-time">2시간 전</div>
+      </div>
+      <div class="wc-date-badge">오늘</div>
+    </div>
+    <div class="wc-wod-box">
+      <div class="wc-wod-title">Helen</div>
+      <div class="wc-wod-text">3 Rounds
+400m Run
+21 KB Swings (24kg)
+12 Pull-ups
+
+*For Time</div>
+    </div>
+    <div class="wc-result-row">
+      <span class="wc-result-label">RESULT</span>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="wc-result-value">11:43</span>
+        <span class="wc-rx-badge">Rx</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom Tab Bar -->
+<div class="tab-bar">
+  <div class="tab-item active">
+    <div class="tab-icon" style="color:#2196F3;">🏠</div>
+    <div class="tab-label" style="color:#2196F3;">홈</div>
+  </div>
+  <div class="tab-item">
+    <div class="tab-icon" style="color:#9CA3AF;">🏋️</div>
+    <div class="tab-label">1RM</div>
+  </div>
+  <div class="tab-item">
+    <div class="tab-icon" style="color:#9CA3AF;">👥</div>
+    <div class="tab-label">친구</div>
+  </div>
+  <div class="tab-item">
+    <div class="tab-icon" style="color:#9CA3AF;">📍</div>
+    <div class="tab-label">박스</div>
+  </div>
+</div>
+
+</body>
+</html>

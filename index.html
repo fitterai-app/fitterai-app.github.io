@@ -193,6 +193,14 @@
         "@type": "Answer",
         "text": "Yes, Fitter AI is available on both iOS (App Store) and Android (Google Play). You can use the same account across multiple devices, and all workout data syncs automatically to the cloud."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "소셜 피드는 어떻게 동작하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "홈 피드에서 친구 및 같은 박스 멤버들의 최근 WOD 기록을 확인할 수 있습니다. 같은 날 같은 WOD를 기록한 멤버들의 기록이 그룹으로 묶여 순위가 자동으로 표시됩니다. 1RM을 갱신하면 PR 카드가 피드에 자동 공유되어 함께 성장하는 분위기를 만들어줍니다."
+      }
     }
   ]
 }
@@ -922,7 +930,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
         <span data-ko="크로스핏 운동 기록," data-en="CrossFit Workout Log,">크로스핏 운동 기록,</span><br>
         <span class="highlight" data-ko="AI가 알아서 한다." data-en="Powered by AI.">AI가 알아서 한다.</span>
       </h1>
-      <p class="hero-subtitle" data-ko="핏터AI — 화이트보드 사진 한 장이면 끝. 크로스핏 앱 & 하이록스 앱을 찾고 있다면, AI가 WOD를 자동 기록하는 스마트 운동 기록 앱." data-en="Fitter AI — Snap the whiteboard, and you're done. The smart CrossFit app & Hyrox app with AI-powered workout logging.">핏터AI — 화이트보드 사진 한 장이면 끝. 크로스핏 앱 & 하이록스 앱을 찾고 있다면, AI가 WOD를 자동 기록하는 스마트 운동 기록 앱.</p>
+      <p class="hero-subtitle" data-ko="핏터AI — 화이트보드 사진 한 장이면 끝. WOD 기록부터 친구들과 순위 비교, 박스 커뮤니티까지. AI가 알아서 하는 크로스핏 & 하이록스 전용 앱." data-en="Fitter AI — Snap the whiteboard, you're done. Log WODs, compare rankings with friends, and connect with your box — all in one AI-powered CrossFit & Hyrox app.">핏터AI — 화이트보드 사진 한 장이면 끝. WOD 기록부터 친구들과 순위 비교, 박스 커뮤니티까지. AI가 알아서 하는 크로스핏 & 하이록스 전용 앱.</p>
       <div class="hero-buttons">
         <a href="https://apps.apple.com/app/fitterai/id6758332449" target="_blank" rel="noopener" class="store-btn">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -980,6 +988,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
       </div>
     </div>
 
+    <!-- Feature NEW: Social Feed -->
+    <div class="feature-row reverse fade-up">
+      <div class="feature-text">
+        <div class="feature-title-row">
+          <div class="feature-icon-badge" style="background:#FFF3E0;">📣</div>
+          <h3 class="feature-label" data-ko="같은 WOD, 우리가 몇 등?" data-en="Same WOD — Where Do You Rank?">같은 WOD, 우리가 몇 등?</h3>
+        </div>
+        <p class="feature-desc" data-ko="홈 피드에서 친구와 박스 멤버들의 WOD 기록을 한눈에 확인하세요. 같은 WOD를 기록하면 자동으로 순위가 매겨지고, 1RM PR 달성 시 피드에 공유됩니다." data-en="See your friends' and box members' WOD logs in your home feed. When you log the same WOD, rankings appear automatically — and PRs are shared to the feed.">홈 피드에서 친구와 박스 멤버들의 WOD 기록을 한눈에 확인하세요. 같은 WOD를 기록하면 자동으로 순위가 매겨지고, 1RM PR 달성 시 피드에 공유됩니다.</p>
+        <div class="feature-highlights">
+          <div class="feature-highlight"><span class="check">✓</span><span data-ko="친구·박스 WOD 피드 실시간 확인" data-en="Live feed of friends' &amp; box WODs">친구·박스 WOD 피드 실시간 확인</span></div>
+          <div class="feature-highlight"><span class="check">✓</span><span data-ko="같은 WOD 참여 시 순위 자동 비교" data-en="Auto-ranked when you log the same WOD">같은 WOD 참여 시 순위 자동 비교</span></div>
+          <div class="feature-highlight"><span class="check">✓</span><span data-ko="1RM PR 달성 시 피드 자동 공유" data-en="PRs shared to the feed automatically">1RM PR 달성 시 피드 자동 공유</span></div>
+        </div>
+      </div>
+      <div class="feature-phone">
+        <div class="phone-mockup">
+          <img src="../screenshots/07_social_feed.png" alt="소셜 피드 - WOD 그룹 카드와 순위 비교" loading="lazy">
+        </div>
+      </div>
+    </div>
+
     <!-- Feature 2: 1RM -->
     <div class="feature-row reverse fade-up">
       <div class="feature-text">
@@ -1011,10 +1040,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
           <div class="feature-icon-badge" style="background: #F3E8FF;">👥</div>
           <h3 class="feature-label" data-ko="함께 하면 더 강해진다" data-en="Compete with Friends">함께 하면 더 강해진다</h3>
         </div>
-        <p class="feature-desc" data-ko="친구 코드를 공유하고, 리더보드에서 경쟁하세요. Back Squat, Deadlift 등 종목별 1RM 순위와 이번 달 운동 횟수를 비교할 수 있습니다." data-en="Share your friend code and compete on leaderboards. Compare 1RM rankings for each lift and monthly workout counts with your friends.">친구 코드를 공유하고, 리더보드에서 경쟁하세요. Back Squat, Deadlift 등 종목별 1RM 순위와 이번 달 운동 횟수를 비교할 수 있습니다.</p>
+        <p class="feature-desc" data-ko="친구 코드를 공유하고, 리더보드에서 경쟁하세요. Back Squat, Deadlift 등 종목별 1RM 순위와 이번 달 운동 횟수를 비교하고, 같은 WOD를 기록하면 실시간으로 순위가 매겨집니다." data-en="Share your friend code and compete on leaderboards. Compare 1RM rankings and monthly workout counts — and get auto-ranked whenever you log the same WOD.">친구 코드를 공유하고, 리더보드에서 경쟁하세요. Back Squat, Deadlift 등 종목별 1RM 순위와 이번 달 운동 횟수를 비교하고, 같은 WOD를 기록하면 실시간으로 순위가 매겨집니다.</p>
         <div class="feature-highlights">
           <div class="feature-highlight"><span class="check">✓</span><span data-ko="6자리 친구 코드로 간편 추가" data-en="Add friends with a simple 6-digit code">6자리 친구 코드로 간편 추가</span></div>
           <div class="feature-highlight"><span class="check">✓</span><span data-ko="종목별 · 기간별 리더보드" data-en="Leaderboards by lift and time period">종목별 · 기간별 리더보드</span></div>
+          <div class="feature-highlight"><span class="check">✓</span><span data-ko="같은 WOD 참여 시 순위 비교" data-en="WOD leaderboard when you log the same workout">같은 WOD 참여 시 순위 비교</span></div>
         </div>
       </div>
       <div class="feature-phone">
@@ -1031,10 +1061,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
           <div class="feature-icon-badge" style="background: #FFEDD5;">📍</div>
           <h3 class="feature-label" data-ko="우리 박스, 하나로 연결" data-en="Your Box, Connected">우리 박스, 하나로 연결</h3>
         </div>
-        <p class="feature-desc" data-ko="나의 크로스핏 박스에 참여하세요. 박스 내 리더보드, 새 멤버 소식, 이번 달 운동 순위까지. 같은 박스 멤버들과 함께 성장하세요." data-en="Join your CrossFit box. Box-wide leaderboards, new member updates, and monthly rankings — grow together with your box members.">나의 크로스핏 박스에 참여하세요. 박스 내 리더보드, 새 멤버 소식, 이번 달 운동 순위까지. 같은 박스 멤버들과 함께 성장하세요.</p>
+        <p class="feature-desc" data-ko="나의 크로스핏 박스에 참여하세요. 박스 내 리더보드, 이번 달 운동 순위, 오늘의 WOD 참여자 순위까지. 같은 박스 멤버들과 함께 성장하세요." data-en="Join your CrossFit box. Box-wide leaderboards, monthly rankings, and real-time WOD rankings for today's participants — grow together with your box.">나의 크로스핏 박스에 참여하세요. 박스 내 리더보드, 이번 달 운동 순위, 오늘의 WOD 참여자 순위까지. 같은 박스 멤버들과 함께 성장하세요.</p>
         <div class="feature-highlights">
           <div class="feature-highlight"><span class="check">✓</span><span data-ko="박스 리더보드 & 멤버 팔로우" data-en="Box leaderboard & member follow">박스 리더보드 & 멤버 팔로우</span></div>
           <div class="feature-highlight"><span class="check">✓</span><span data-ko="초대 링크로 멤버 초대" data-en="Invite members with a share link">초대 링크로 멤버 초대</span></div>
+          <div class="feature-highlight"><span class="check">✓</span><span data-ko="오늘의 WOD 박스 내 참여자 순위" data-en="Box WOD ranking for today's participants">오늘의 WOD 박스 내 참여자 순위</span></div>
+          <div class="feature-highlight"><span class="check">✓</span><span data-ko="첫 등록자 기여자 배지" data-en="First logger gets a contributor badge">첫 등록자 기여자 배지</span></div>
         </div>
       </div>
       <div class="feature-phone">
@@ -1175,6 +1207,10 @@ Pull-ups
       <div class="faq-item fade-up">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')" data-ko="운동 결과를 인스타그램에 공유할 수 있나요?" data-en="Can I share my workout results on Instagram?">운동 결과를 인스타그램에 공유할 수 있나요?</button>
         <div class="faq-a"><div class="faq-a-inner" data-ko="네, WOD 완료 후 운동 결과를 예쁜 카드 이미지로 만들어 인스타그램, 카카오톡 등 SNS에 바로 공유할 수 있습니다. 1RM PR 달성 시에도 기념 공유 카드가 자동 생성됩니다." data-en="Yes! After completing a WOD, Fitter AI automatically generates a shareable card image you can post to Instagram, KakaoTalk, or any other social platform. A special celebration card is also created when you set a new 1RM PR.">네, WOD 완료 후 운동 결과를 예쁜 카드 이미지로 만들어 인스타그램, 카카오톡 등 SNS에 바로 공유할 수 있습니다. 1RM PR 달성 시에도 기념 공유 카드가 자동 생성됩니다.</div></div>
+      </div>
+      <div class="faq-item fade-up">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open')" data-ko="소셜 피드는 어떻게 동작하나요?" data-en="How does the social feed work?">소셜 피드는 어떻게 동작하나요?</button>
+        <div class="faq-a"><div class="faq-a-inner" data-ko="홈 피드에서 친구 및 같은 박스 멤버들의 최근 WOD 기록을 확인할 수 있습니다. 같은 날 같은 WOD를 기록한 멤버들의 기록이 그룹으로 묶여 순위가 자동으로 표시됩니다. 1RM을 갱신하면 PR 카드가 피드에 자동 공유되어 함께 성장하는 분위기를 만들어줍니다." data-en="Your home feed shows recent WOD logs from friends and box members. When multiple people log the same WOD on the same day, their scores are automatically grouped and ranked. PR cards appear in the feed whenever someone sets a new 1RM, creating a community feeling around shared progress.">홈 피드에서 친구 및 같은 박스 멤버들의 최근 WOD 기록을 확인할 수 있습니다. 같은 날 같은 WOD를 기록한 멤버들의 기록이 그룹으로 묶여 순위가 자동으로 표시됩니다. 1RM을 갱신하면 PR 카드가 피드에 자동 공유되어 함께 성장하는 분위기를 만들어줍니다.</div></div>
       </div>
     </div>
   </div>
