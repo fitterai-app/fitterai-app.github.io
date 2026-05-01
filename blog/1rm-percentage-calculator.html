@@ -54,6 +54,44 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1RM을 테스트한 적이 없는데 어떻게 하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "코치에게 1RM 테스트 세션을 요청하거나, 5RM(5회 반복 최대 무게)에 1.15를 곱하면 대략적인 1RM을 추정할 수 있습니다. 예: 5RM이 85kg이면 → 1RM ≈ 98kg" }
+    },
+    {
+      "@type": "Question",
+      "name": "kg과 lb를 전환할 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네. Fitter AI에서는 kg ↔ lb 자유 전환이 가능합니다. 미국 박스에서 lb를 사용하는 경우에도 편리하게 사용할 수 있습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "1RM이 올라가면 환산표도 자동으로 바뀌나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네, 새로운 1RM을 기록하면 환산표가 자동으로 업데이트됩니다. 항상 최신 기록 기준으로 표시됩니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "Epley 공식과 다른 공식(Brzycki, Lander 등)은 어떻게 다른가요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Epley(1985): 1RM = 무게 × (1 + 반복수/30), Brzycki(1993): 1RM = 무게 × 36 / (37 - 반복수). 실용적으로는 5회 이하의 기록이라면 두 공식 모두 비슷한 결과를 냅니다. 크로스핏에서는 Epley가 가장 널리 사용됩니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "1RM 퍼센트 환산은 모든 종목에 동일하게 적용되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "아닙니다. 올림픽 리프팅(클린, 저크)은 85~90%가 실용적인 상한이고, 파워리프팅 동작(스쾃, 데드)은 90% 이상도 훈련에 활용됩니다. 종목 특성에 맞는 퍼센트 범위를 이해하는 것이 중요합니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "EMOM에서 70% 무게를 세트 중간에 조정해도 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네, 상황에 따라 조정하는 것이 현명합니다. 특히 10분 이상의 EMOM은 후반부로 갈수록 누적 피로가 생깁니다. 처음에 70%로 시작해서 후반에 65%로 낮추는 방식으로 운동의 질을 유지하는 것을 권장합니다." }
+    }
+  ]
+}
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Pretendard',sans-serif;color:#1A1A1A;background:#F5F7FA;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -108,6 +146,9 @@ tr:hover td{background:#FAFBFC}
 .related-list{display:flex;flex-direction:column;gap:12px}
 .related-list a{display:block;padding:16px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);font-size:15px;font-weight:500;color:#1A1A1A;text-decoration:none;transition:transform 0.2s}
 .related-list a:hover{transform:translateY(-2px)}
+.faq-item{background:#F0F7FF;border-radius:12px;padding:20px 24px;margin-bottom:16px;border-left:4px solid #2196F3}
+.faq-item h3{margin-top:0;margin-bottom:8px;font-size:16px;color:#1565C0}
+.faq-item p{margin-bottom:0;font-size:14px}
 </style>
 </head>
 <body>
@@ -202,7 +243,22 @@ tr:hover td{background:#FAFBFC}
       <p data-ko="✅ Fitter AI의 1RM 환산표는 종목별로 따로 관리됩니다. Back Squat, Deadlift, Clean & Jerk 등 10개 이상의 종목 각각에 대해 환산표를 볼 수 있습니다." data-en="✅ Fitter AI's percentage charts are managed per lift. View charts for 10+ lifts including Back Squat, Deadlift, Clean & Jerk, and more.">✅ Fitter AI의 1RM 환산표는 종목별로 따로 관리됩니다. Back Squat, Deadlift, Clean & Jerk 등 10개 이상의 종목 각각에 대해 환산표를 볼 수 있습니다.</p>
     </div>
 
-    <h2 data-ko="자주 묻는 질문" data-en="Frequently Asked Questions">자주 묻는 질문</h2>
+    <h2 data-ko="Epley 공식 — AI는 어떻게 1RM을 계산하나?" data-en="Epley Formula — How AI Calculates Your 1RM">Epley 공식 — AI는 어떻게 1RM을 계산하나?</h2>
+    <p data-ko="1RM을 직접 테스트하지 않아도, 여러 회수의 기록을 입력하면 AI가 자동으로 추정합니다. 이때 사용하는 것이 <strong>Epley 공식</strong>입니다:" data-en="Even without a direct 1RM test, entering multi-rep records lets AI estimate it automatically using the <strong>Epley formula</strong>:">1RM을 직접 테스트하지 않아도, 여러 회수의 기록을 입력하면 AI가 자동으로 추정합니다. 이때 사용하는 것이 <strong>Epley 공식</strong>입니다:</p>
+    <div class="highlight-box">
+      <p data-ko="📐 <strong>Epley 공식</strong>: 추정 1RM = 무게 × (1 + 반복수 ÷ 30)" data-en="📐 <strong>Epley Formula</strong>: Estimated 1RM = Weight × (1 + Reps ÷ 30)">📐 <strong>Epley 공식</strong>: 추정 1RM = 무게 × (1 + 반복수 ÷ 30)</p>
+    </div>
+    <p data-ko="예시: Back Squat 100kg으로 3회를 성공했다면 → 100 × (1 + 3/30) = 100 × 1.1 = <strong>110kg</strong> 추정. 이 공식은 <strong>5회 이하</strong>에서 가장 정확하고, 10회 이상에서는 오차가 커집니다. Fitter AI는 여러 기록 중 가장 신뢰도 높은 추정값을 자동으로 선택합니다." data-en="Example: Back Squat 100kg for 3 reps → 100 × (1 + 3/30) = 100 × 1.1 = <strong>110kg</strong> estimated. Most accurate for <strong>5 reps or fewer</strong>; accuracy drops significantly above 10 reps. Fitter AI automatically selects the most reliable estimate across your logged records.">예시: Back Squat 100kg으로 3회를 성공했다면 → 100 × (1 + 3/30) = 100 × 1.1 = <strong>110kg</strong> 추정. 이 공식은 <strong>5회 이하</strong>에서 가장 정확하고, 10회 이상에서는 오차가 커집니다. Fitter AI는 여러 기록 중 가장 신뢰도 높은 추정값을 자동으로 선택합니다.</p>
+
+    <h2 data-ko="종목별 퍼센트 활용이 다른 이유" data-en="Why Percentage Use Differs by Lift">종목별 퍼센트 활용이 다른 이유</h2>
+    <p data-ko="1RM 퍼센트 환산은 모든 종목에 동일하게 적용되지 않습니다. 종목의 특성에 따라 실용적인 퍼센트 범위가 달라집니다:" data-en="1RM percentages don't apply uniformly across all lifts. Practical percentage ranges vary by the nature of each movement:">1RM 퍼센트 환산은 모든 종목에 동일하게 적용되지 않습니다. 종목의 특성에 따라 실용적인 퍼센트 범위가 달라집니다:</p>
+    <ul>
+      <li data-ko="<strong>올림픽 리프팅 (Clean, Snatch, Jerk)</strong> — 기술 의존도가 매우 높아 85~90%가 실용적인 상한입니다. 90% 이상에서는 기술이 무너지기 쉽고 부상 위험이 급격히 증가합니다." data-en="<strong>Olympic Lifts (Clean, Snatch, Jerk)</strong> — Highly technique-dependent; 85–90% is the practical ceiling. Above 90%, form breaks down rapidly and injury risk spikes."><strong>올림픽 리프팅 (Clean, Snatch, Jerk)</strong> — 기술 의존도가 매우 높아 85~90%가 실용적인 상한입니다. 90% 이상에서는 기술이 무너지기 쉽고 부상 위험이 급격히 증가합니다.</li>
+      <li data-ko="<strong>파워리프팅 동작 (Back Squat, Deadlift, Bench)</strong> — 상대적으로 기술 안정성이 높아 90% 이상에서도 훈련이 가능합니다. 스트렝스 사이클에서 90~97%를 활용합니다." data-en="<strong>Powerlifting Movements (Back Squat, Deadlift, Bench)</strong> — More technically stable; training above 90% is viable. Strength cycles commonly use 90–97%."><strong>파워리프팅 동작 (Back Squat, Deadlift, Bench)</strong> — 상대적으로 기술 안정성이 높아 90% 이상에서도 훈련이 가능합니다. 스트렝스 사이클에서 90~97%를 활용합니다.</li>
+    </ul>
+    <p data-ko="크로스핏 WOD에서 &quot;Clean 80%&quot;라고 나오면 실제로 매우 고강도입니다. 반면 &quot;Back Squat 80%&quot;는 중강도 훈련에 해당합니다. 같은 퍼센트라도 종목에 따라 체감 난이도가 완전히 다르다는 점을 기억하세요." data-en="In a CrossFit WOD, &quot;Clean at 80%&quot; is actually very intense. &quot;Back Squat at 80%,&quot; however, is moderate training. Remember: the same percentage feels completely different depending on the lift.">크로스핏 WOD에서 "Clean 80%"라고 나오면 실제로 매우 고강도입니다. 반면 "Back Squat 80%"는 중강도 훈련에 해당합니다. 같은 퍼센트라도 종목에 따라 체감 난이도가 완전히 다르다는 점을 기억하세요.</p>
+
+        <h2 data-ko="자주 묻는 질문" data-en="Frequently Asked Questions">자주 묻는 질문</h2>
 
     <h3 data-ko="Q. 1RM을 테스트한 적이 없는데 어떻게 하나요?" data-en="Q. I've never tested my 1RM. What should I do?">Q. 1RM을 테스트한 적이 없는데 어떻게 하나요?</h3>
     <p data-ko="코치에게 1RM 테스트 세션을 요청하거나, 5RM(5회 반복 최대 무게)에 1.15를 곱하면 대략적인 1RM을 추정할 수 있습니다. 예: 5RM이 85kg이면 → 1RM ≈ 98kg" data-en="Ask your coach for a 1RM test session, or multiply your 5RM (max weight for 5 reps) by 1.15 for an estimate. Example: 5RM of 85kg → 1RM ≈ 98kg">코치에게 1RM 테스트 세션을 요청하거나, 5RM(5회 반복 최대 무게)에 1.15를 곱하면 대략적인 1RM을 추정할 수 있습니다. 예: 5RM이 85kg이면 → 1RM ≈ 98kg</p>
@@ -213,7 +269,20 @@ tr:hover td{background:#FAFBFC}
     <h3 data-ko="Q. 1RM이 올라가면 환산표도 자동으로 바뀌나요?" data-en="Q. Does the chart update when my 1RM improves?">Q. 1RM이 올라가면 환산표도 자동으로 바뀌나요?</h3>
     <p data-ko="네, 새로운 1RM을 기록하면 환산표가 자동으로 업데이트됩니다. 항상 최신 기록 기준으로 표시됩니다." data-en="Yes, the chart auto-updates when you record a new 1RM. It always reflects your latest record.">네, 새로운 1RM을 기록하면 환산표가 자동으로 업데이트됩니다. 항상 최신 기록 기준으로 표시됩니다.</p>
 
-    <div class="cta-box">
+    <div class="faq-item">
+      <h3 data-ko="Q. Epley 공식과 다른 공식(Brzycki 등)은 어떻게 다른가요?" data-en="Q. How does the Epley formula differ from others like Brzycki?">Q. Epley 공식과 다른 공식(Brzycki 등)은 어떻게 다른가요?</h3>
+      <p data-ko="대표 공식들: <strong>Epley</strong>(1RM = 무게 × (1+반복수/30)), <strong>Brzycki</strong>(1RM = 무게 × 36/(37-반복수)). 5회 이하의 기록에서는 두 공식 결과가 거의 같습니다. 크로스핏에서는 계산이 간단한 Epley 공식이 가장 널리 쓰입니다." data-en="Key formulas: <strong>Epley</strong> (1RM = Weight × (1 + Reps/30)), <strong>Brzycki</strong> (1RM = Weight × 36 / (37 - Reps)). Results are nearly identical for 5 reps or fewer. Epley is most widely used in CrossFit for its simplicity.">대표 공식들: <strong>Epley</strong>(1RM = 무게 × (1+반복수/30)), <strong>Brzycki</strong>(1RM = 무게 × 36/(37-반복수)). 5회 이하의 기록에서는 두 공식 결과가 거의 같습니다. 크로스핏에서는 계산이 간단한 Epley 공식이 가장 널리 쓰입니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-ko="Q. 1RM 퍼센트 환산은 모든 종목에 동일하게 적용되나요?" data-en="Q. Do percentage charts apply the same way for all lifts?">Q. 1RM 퍼센트 환산은 모든 종목에 동일하게 적용되나요?</h3>
+      <p data-ko="아닙니다. 올림픽 리프팅(클린, 저크)은 <strong>85~90%</strong>가 실용적인 상한이고, 파워리프팅 동작(스쾃, 데드)은 90% 이상도 훈련에 활용됩니다. 종목 특성에 따라 안전한 퍼센트 범위가 다릅니다." data-en="No. Olympic lifts (Clean, Jerk) have a practical ceiling of <strong>85–90%</strong>, while powerlifting movements (Squat, Deadlift) can be trained above 90%. Safe percentage ranges differ by lift type.">아닙니다. 올림픽 리프팅(클린, 저크)은 <strong>85~90%</strong>가 실용적인 상한이고, 파워리프팅 동작(스쾃, 데드)은 90% 이상도 훈련에 활용됩니다. 종목 특성에 따라 안전한 퍼센트 범위가 다릅니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-ko="Q. EMOM에서 '70%' 무게를 세트 중간에 조정해도 되나요?" data-en="Q. Can I adjust the 70% weight mid-EMOM?">Q. EMOM에서 '70%' 무게를 세트 중간에 조정해도 되나요?</h3>
+      <p data-ko="네, 상황에 따라 조정하는 것이 현명합니다. 10분 이상의 EMOM은 후반부로 갈수록 누적 피로가 생깁니다. 처음에 70%로 시작해서 후반에 65%로 낮추는 방식으로 <strong>운동의 질을 유지</strong>하는 것이 더 중요합니다." data-en="Yes, adjusting mid-EMOM is smart. In EMOMs longer than 10 minutes, fatigue accumulates. Starting at 70% then dropping to 65% later helps <strong>maintain movement quality</strong> throughout.">네, 상황에 따라 조정하는 것이 현명합니다. 10분 이상의 EMOM은 후반부로 갈수록 누적 피로가 생깁니다. 처음에 70%로 시작해서 후반에 65%로 낮추는 방식으로 <strong>운동의 질을 유지</strong>하는 것이 더 중요합니다.</p>
+    </div>
+
+        <div class="cta-box">
       <h3 data-ko="1RM 환산표, 앱에서 바로 확인하세요" data-en="Check Your 1RM Chart Instantly in the App">1RM 환산표, 앱에서 바로 확인하세요</h3>
       <p data-ko="종목별 자동 환산표 + 성장 그래프까지. 무료로 다운로드하세요." data-en="Auto percentage charts + progress graphs per lift. Download for free.">종목별 자동 환산표 + 성장 그래프까지. 무료로 다운로드하세요.</p>
       <a href="../index.html#download" class="cta-link" data-ko="무료 다운로드" data-en="Free Download">무료 다운로드</a>

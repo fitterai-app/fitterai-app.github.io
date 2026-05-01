@@ -54,6 +54,34 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1RM 테스트는 얼마나 자주 해야 하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "일반적으로 6~8주마다 한 번이 권장됩니다. 너무 자주 테스트하면 누적 피로가 쌓이고, 간격이 너무 길면 훈련 성과가 반영되지 않습니다. 스트렝스 사이클 마지막 주에 맞춰 테스트하는 것이 가장 효과적입니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "부상이 걱정되는데 1RM을 꼭 테스트해야 하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "직접 테스트할 필요는 없습니다. 3RM 또는 5RM 기록에 Epley 공식(1RM ≈ 무게 × (1 + 반복수/30))을 적용하면 안전하게 추정 가능합니다. Fitter AI에서는 여러 회수의 기록을 입력하면 Estimated 1RM을 자동 계산해줍니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "스쾃과 데드리프트 중 어떤 걸 먼저 추적해야 하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "크로스핏 WOD에서 Back Squat 퍼센트가 가장 자주 등장합니다. 시작점으로 Back Squat을 먼저 추적하고, 이후 Deadlift, Clean & Jerk 순으로 추가하는 것을 권장합니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "Fitter AI에서 1RM을 수동으로 입력할 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네, 직접 테스트하지 않아도 수동으로 입력할 수 있습니다. 코치에게 들었거나 이전에 기록해뒀던 수치를 바로 입력하면 환산표가 자동 생성됩니다. 새로운 PR이 나올 때마다 업데이트하면 항상 최신 기준으로 관리됩니다." }
+    }
+  ]
+}
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Pretendard',sans-serif;color:#1A1A1A;background:#F5F7FA;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -94,6 +122,9 @@ tr:hover td{background:#FAFBFC}
 .related-list{display:flex;flex-direction:column;gap:12px}
 .related-list a{display:block;padding:16px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);font-size:15px;font-weight:500;color:#1A1A1A;text-decoration:none;transition:transform 0.2s}
 .related-list a:hover{transform:translateY(-2px)}
+.faq-item{background:#F0FDF4;border-radius:12px;padding:20px 24px;margin-bottom:16px;border-left:4px solid #22C55E}
+.faq-item h3{margin-top:0;margin-bottom:8px;font-size:16px;color:#15803D}
+.faq-item p{margin-bottom:0;font-size:14px}
 </style>
 </head>
 <body>
@@ -175,7 +206,78 @@ tr:hover td{background:#FAFBFC}
       <li data-ko="<strong>성장 그래프 확인</strong> — 숫자만 보지 말고, 그래프로 추세를 확인하면 동기 부여가 됩니다" data-en="<strong>Check progress charts</strong> — Don't just look at numbers; seeing the trend on a graph is motivating"><strong>성장 그래프 확인</strong> — 숫자만 보지 말고, 그래프로 추세를 확인하면 동기 부여가 됩니다</li>
     </ol>
 
-    <div class="cta-box">
+
+    <h2 data-ko="1RM 테스트 안전하게 하는 방법" data-en="How to Test Your 1RM Safely">1RM 테스트 안전하게 하는 방법</h2>
+    <p data-ko="1RM 테스트는 최대 강도의 운동이므로 워밍업 프로토콜이 필수입니다. 일반적으로 권장하는 순서는 다음과 같습니다:" data-en="1RM testing involves maximum intensity, so a proper warm-up protocol is essential. The recommended progression:">1RM 테스트는 최대 강도의 운동이므로 워밍업 프로토콜이 필수입니다. 일반적으로 권장하는 순서는 다음과 같습니다:</p>
+    <ol>
+      <li data-ko="<strong>50% × 5회</strong> — 가벼운 워밍업, 동작 패턴 확인" data-en="<strong>50% × 5 reps</strong> — Light warm-up, movement pattern check"><strong>50% × 5회</strong> — 가벼운 워밍업, 동작 패턴 확인</li>
+      <li data-ko="<strong>70% × 3회</strong> — 점진적 부하 증가" data-en="<strong>70% × 3 reps</strong> — Progressive load increase"><strong>70% × 3회</strong> — 점진적 부하 증가</li>
+      <li data-ko="<strong>85% × 1회</strong> — 고중량 적응" data-en="<strong>85% × 1 rep</strong> — Heavy weight adaptation"><strong>85% × 1회</strong> — 고중량 적응</li>
+      <li data-ko="<strong>92~95% × 1회</strong> — 최대 무게 직전" data-en="<strong>92~95% × 1 rep</strong> — Just below max"><strong>92~95% × 1회</strong> — 최대 무게 직전</li>
+      <li data-ko="<strong>100% 이상 시도</strong> — 새 PR 도전" data-en="<strong>100%+ attempt</strong> — New PR attempt"><strong>100% 이상 시도</strong> — 새 PR 도전</li>
+    </ol>
+    <p data-ko="각 세트 사이에 <strong>3~5분 충분히 휴식</strong>하는 것이 중요합니다. 피로가 쌓인 상태에서는 최대 무게를 발휘하기 어렵고 부상 위험도 높아집니다. 또한 1RM 테스트는 컨디션이 좋은 날에 합니다 — 수면 부족이나 전날 고강도 운동 직후는 피하세요." data-en="Taking <strong>3–5 minutes of full rest</strong> between sets is critical. Fatigue compromises max output and increases injury risk. Schedule 1RM tests on good recovery days — avoid testing after poor sleep or a high-intensity session the day before.">각 세트 사이에 <strong>3~5분 충분히 휴식</strong>하는 것이 중요합니다. 피로가 쌓인 상태에서는 최대 무게를 발휘하기 어렵고 부상 위험도 높아집니다. 또한 1RM 테스트는 컨디션이 좋은 날에 합니다 — 수면 부족이나 전날 고강도 운동 직후는 피하세요.</p>
+
+    <h2 data-ko="초보자라면 — Estimated 1RM으로 시작하기" data-en="For Beginners — Start with an Estimated 1RM">초보자라면 — Estimated 1RM으로 시작하기</h2>
+    <p data-ko="1RM 직접 테스트가 부담스럽다면 <strong>Epley 공식</strong>으로 추정치를 구할 수 있습니다:" data-en="If direct 1RM testing feels daunting, use the <strong>Epley formula</strong> to estimate it:">1RM 직접 테스트가 부담스럽다면 <strong>Epley 공식</strong>으로 추정치를 구할 수 있습니다:</p>
+    <div class="highlight-box">
+      <p data-ko="📐 <strong>Epley 공식</strong>: 추정 1RM = 무게 × (1 + 반복수 ÷ 30)" data-en="📐 <strong>Epley Formula</strong>: Estimated 1RM = Weight × (1 + Reps ÷ 30)">📐 <strong>Epley 공식</strong>: 추정 1RM = 무게 × (1 + 반복수 ÷ 30)</p>
+    </div>
+    <p data-ko="예를 들어 Back Squat 90kg으로 5회를 성공했다면: 90 × (1 + 5/30) = 90 × 1.167 ≈ <strong>105kg</strong>이 추정 1RM입니다. 이 공식은 <strong>5회 이하</strong>의 기록일 때 가장 정확합니다. 10회 이상의 고반복 기록에서는 오차가 커집니다." data-en="For example, if you Back Squat 90kg for 5 reps: 90 × (1 + 5/30) = 90 × 1.167 ≈ <strong>105kg</strong> estimated 1RM. This formula is most accurate for <strong>5 reps or fewer</strong>. Accuracy drops significantly with 10+ rep sets.">예를 들어 Back Squat 90kg으로 5회를 성공했다면: 90 × (1 + 5/30) = 90 × 1.167 ≈ <strong>105kg</strong>이 추정 1RM입니다. 이 공식은 <strong>5회 이하</strong>의 기록일 때 가장 정확합니다. 10회 이상의 고반복 기록에서는 오차가 커집니다.</p>
+    <p data-ko="Fitter AI에서는 여러 횟수의 기록을 입력하면 Epley 공식 기반 Estimated 1RM을 자동으로 계산하여 보여줍니다. 직접 테스트 없이도 퍼센트 환산표를 활용하는 출발점을 만들 수 있습니다." data-en="In Fitter AI, entering records at various rep counts automatically calculates an Epley-based Estimated 1RM. This gives you a starting point for percentage-based training even without a formal 1RM test.">Fitter AI에서는 여러 횟수의 기록을 입력하면 Epley 공식 기반 Estimated 1RM을 자동으로 계산하여 보여줍니다. 직접 테스트 없이도 퍼센트 환산표를 활용하는 출발점을 만들 수 있습니다.</p>
+
+    <h2 data-ko="종목별 1RM 수준 가이드 (참고용)" data-en="1RM Level Guide by Lift (Reference)">종목별 1RM 수준 가이드 (참고용)</h2>
+    <p data-ko="아래 표는 크로스핏에서 자주 사용하는 종목의 대략적인 수준 구분입니다. 체중·경력·훈련 방식에 따라 큰 편차가 있으니 <strong>참고 기준으로만</strong> 활용하세요." data-en="The table below shows rough strength levels for common CrossFit lifts. <strong>Use only as a reference</strong> — actual levels vary significantly by bodyweight, experience, and training style.">아래 표는 크로스핏에서 자주 사용하는 종목의 대략적인 수준 구분입니다. 체중·경력·훈련 방식에 따라 큰 편차가 있으니 <strong>참고 기준으로만</strong> 활용하세요.</p>
+    <table>
+      <thead>
+        <tr>
+          <th data-ko="종목" data-en="Lift">종목</th>
+          <th data-ko="입문 (남/여)" data-en="Beginner (M/F)">입문 (남/여)</th>
+          <th data-ko="중급 (남/여)" data-en="Intermediate (M/F)">중급 (남/여)</th>
+          <th data-ko="상급 (남/여)" data-en="Advanced (M/F)">상급 (남/여)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-ko="Back Squat" data-en="Back Squat">Back Squat</td>
+          <td data-ko="60~80 / 40~50kg" data-en="60–80 / 40–50kg">60~80 / 40~50kg</td>
+          <td data-ko="100~130 / 60~80kg" data-en="100–130 / 60–80kg">100~130 / 60~80kg</td>
+          <td data-ko="150+ / 90+kg" data-en="150+ / 90+kg">150+ / 90+kg</td>
+        </tr>
+        <tr>
+          <td data-ko="Deadlift" data-en="Deadlift">Deadlift</td>
+          <td data-ko="70~100 / 50~60kg" data-en="70–100 / 50–60kg">70~100 / 50~60kg</td>
+          <td data-ko="120~160 / 70~100kg" data-en="120–160 / 70–100kg">120~160 / 70~100kg</td>
+          <td data-ko="180+ / 110+kg" data-en="180+ / 110+kg">180+ / 110+kg</td>
+        </tr>
+        <tr>
+          <td data-ko="Clean & Jerk" data-en="Clean & Jerk">Clean & Jerk</td>
+          <td data-ko="50~70 / 30~45kg" data-en="50–70 / 30–45kg">50~70 / 30~45kg</td>
+          <td data-ko="80~110 / 50~70kg" data-en="80–110 / 50–70kg">80~110 / 50~70kg</td>
+          <td data-ko="120+ / 75+kg" data-en="120+ / 75+kg">120+ / 75+kg</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 data-ko="자주 묻는 질문" data-en="Frequently Asked Questions">자주 묻는 질문</h2>
+    <div class="faq-item">
+      <h3 data-ko="Q. 1RM 테스트는 얼마나 자주 해야 하나요?" data-en="Q. How often should I test my 1RM?">Q. 1RM 테스트는 얼마나 자주 해야 하나요?</h3>
+      <p data-ko="일반적으로 <strong>6~8주마다 한 번</strong>이 권장됩니다. 너무 자주 하면 누적 피로가 쌓이고, 간격이 너무 길면 훈련 성과를 반영하지 못합니다. 스트렝스 사이클의 마지막 주에 맞춰 테스트하는 것이 가장 효과적입니다." data-en="Every <strong>6–8 weeks</strong> is generally recommended. Too frequent leads to cumulative fatigue; too infrequent fails to capture training gains. Testing in the final week of a strength cycle is most effective.">일반적으로 <strong>6~8주마다 한 번</strong>이 권장됩니다. 너무 자주 하면 누적 피로가 쌓이고, 간격이 너무 길면 훈련 성과를 반영하지 못합니다. 스트렝스 사이클의 마지막 주에 맞춰 테스트하는 것이 가장 효과적입니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-ko="Q. 부상이 걱정되는데 1RM을 꼭 테스트해야 하나요?" data-en="Q. I'm worried about injury — do I have to test my 1RM?">Q. 부상이 걱정되는데 1RM을 꼭 테스트해야 하나요?</h3>
+      <p data-ko="반드시 직접 테스트할 필요는 없습니다. 3RM 또는 5RM 기록에 Epley 공식을 적용하면 안전하게 추정할 수 있습니다. 코치와 상의하여 본인의 컨디션에 맞는 방법을 선택하세요." data-en="You don't have to test directly. Applying the Epley formula to a 3RM or 5RM gives a safe estimate. Consult your coach to choose the method that fits your current condition.">반드시 직접 테스트할 필요는 없습니다. 3RM 또는 5RM 기록에 Epley 공식을 적용하면 안전하게 추정할 수 있습니다. 코치와 상의하여 본인의 컨디션에 맞는 방법을 선택하세요.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-ko="Q. 스쾃과 데드리프트 중 어떤 걸 먼저 추적해야 하나요?" data-en="Q. Should I track Back Squat or Deadlift first?">Q. 스쾃과 데드리프트 중 어떤 걸 먼저 추적해야 하나요?</h3>
+      <p data-ko="크로스핏 WOD에서 <strong>Back Squat 퍼센트</strong>가 가장 자주 등장합니다. 시작점으로 Back Squat을 먼저 추적하고, 이후 Deadlift, Clean & Jerk 순으로 추가하는 것을 권장합니다." data-en="<strong>Back Squat percentages</strong> appear most frequently in CrossFit WODs. Start by tracking Back Squat, then add Deadlift and Clean & Jerk progressively.">크로스핏 WOD에서 <strong>Back Squat 퍼센트</strong>가 가장 자주 등장합니다. 시작점으로 Back Squat을 먼저 추적하고, 이후 Deadlift, Clean & Jerk 순으로 추가하는 것을 권장합니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-ko="Q. Fitter AI에서 1RM을 수동으로 입력할 수 있나요?" data-en="Q. Can I enter my 1RM manually in Fitter AI?">Q. Fitter AI에서 1RM을 수동으로 입력할 수 있나요?</h3>
+      <p data-ko="네, 직접 테스트하지 않아도 수동으로 입력할 수 있습니다. 코치에게 들었거나 이전에 기록해뒀던 수치를 바로 입력하면 환산표가 자동 생성됩니다. 새로운 PR이 나올 때마다 업데이트하면 항상 최신 기준으로 관리됩니다." data-en="Yes, manual entry is fully supported. Enter any value — from a coach's estimate or a past record — and the percentage chart is generated automatically. Update whenever you hit a new PR to keep it current.">네, 직접 테스트하지 않아도 수동으로 입력할 수 있습니다. 코치에게 들었거나 이전에 기록해뒀던 수치를 바로 입력하면 환산표가 자동 생성됩니다. 새로운 PR이 나올 때마다 업데이트하면 항상 최신 기준으로 관리됩니다.</p>
+    </div>
+
+        <div class="cta-box">
       <h3 data-ko="1RM을 스마트하게 관리하세요" data-en="Manage Your 1RM Smartly">1RM을 스마트하게 관리하세요</h3>
       <p data-ko="10개 이상의 종목, 성장 그래프, % 환산표까지 — Fitter AI에서 한 번에." data-en="10+ lifts, progress charts, percentage tables — all in Fitter AI.">10개 이상의 종목, 성장 그래프, % 환산표까지 — Fitter AI에서 한 번에.</p>
       <a href="../index.html#download" class="cta-link" data-ko="무료 다운로드" data-en="Free Download">무료 다운로드</a>

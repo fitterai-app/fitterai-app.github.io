@@ -54,6 +54,34 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "매번 기록하기 너무 귀찮은데 어떻게 하면 좋을까요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "화이트보드 사진 한 장으로 충분합니다. Fitter AI는 사진에서 WOD를 자동으로 인식하므로, 수업 끝나고 보드를 찍는 10초 습관만으로 기록이 완료됩니다. 완벽하게 적을 필요는 없습니다 — 일관성이 핵심입니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "Scaled로 운동했는데 기록할 가치가 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "물론입니다. Scaled 기록도 성장의 증거입니다. 오늘의 Scaled 기록이 3개월 후 Rx 도전의 기준점이 됩니다. Fitter AI에서는 Rx와 Scaled를 구분하여 기록할 수 있어, 나의 성장 과정을 명확하게 볼 수 있습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "박스에서 화이트보드를 안 쓰는 경우 어떻게 기록하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "화이트보드 없이도 운동 이름, 동작, 결과를 직접 입력할 수 있습니다. 또한 코치가 카카오톡이나 메시지로 보낸 WOD 내용의 스크린샷을 찍어서 AI 인식 기능을 활용할 수도 있습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "오래된 기록을 소급 입력할 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "네, 날짜를 직접 지정하여 과거 기록을 소급 입력할 수 있습니다. 예전 사진이나 메모가 있다면 지금 당장 입력해보세요. 기록이 쌓일수록 성장 그래프가 더 의미 있어집니다." }
+    }
+  ]
+}
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Pretendard',sans-serif;color:#1A1A1A;background:#F5F7FA;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -92,6 +120,9 @@ strong{color:#1A1A1A}
 .related-list{display:flex;flex-direction:column;gap:12px}
 .related-list a{display:block;padding:16px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);font-size:15px;font-weight:500;color:#1A1A1A;text-decoration:none;transition:transform 0.2s}
 .related-list a:hover{transform:translateY(-2px)}
+.faq-item{background:#EFF6FF;border-radius:12px;padding:20px 24px;margin-bottom:16px;border-left:4px solid #2196F3}
+.faq-item h3{margin-top:0;margin-bottom:8px;font-size:16px;color:#1565C0}
+.faq-item p{margin-bottom:0;font-size:14px}
 </style>
 </head>
 <body>
@@ -155,7 +186,43 @@ strong{color:#1A1A1A}
     <h2 data-ko="정리" data-en="Summary">정리</h2>
     <p data-ko="운동 기록은 크로스핏 성장의 가장 기본이자 핵심입니다. 과거의 나와 비교하고, 오늘의 성과를 친구와 나누고, 내일의 목표를 세우세요. 복잡할 필요 없습니다 — <strong>화이트보드를 찍는 것</strong>만으로도 충분합니다." data-en="Workout tracking is the foundation of CrossFit progress. Compare with your past self, share today's results with friends, and set tomorrow's goals. It doesn't have to be complicated — <strong>just snap the whiteboard</strong>.">운동 기록은 크로스핏 성장의 가장 기본이자 핵심입니다. 과거의 나와 비교하고, 오늘의 성과를 친구와 나누고, 내일의 목표를 세우세요. 복잡할 필요 없습니다 — <strong>화이트보드를 찍는 것</strong>만으로도 충분합니다.</p>
 
-    <div class="cta-box">
+
+    <h2 data-ko="WOD 포맷별 기록 핵심 포인트" data-en="Key Logging Points by WOD Format">WOD 포맷별 기록 핵심 포인트</h2>
+    <p data-ko="크로스핏의 WOD는 포맷에 따라 기록해야 하는 정보가 다릅니다. 포맷별 핵심 기록 항목을 알아두면 기록이 훨씬 빨라집니다." data-en="What to log differs by WOD format. Knowing the key fields per format makes logging significantly faster.">크로스핏의 WOD는 포맷에 따라 기록해야 하는 정보가 다릅니다. 포맷별 핵심 기록 항목을 알아두면 기록이 훨씬 빨라집니다.</p>
+    <ul>
+      <li data-ko="<strong>For Time</strong> — 완료 시간 + Rx/Scaled 여부. 같은 WOD를 다음번에 할 때 비교 기준이 됩니다." data-en="<strong>For Time</strong> — Completion time + Rx/Scaled. This becomes the benchmark when you repeat the same WOD."><strong>For Time</strong> — 완료 시간 + Rx/Scaled 여부. 같은 WOD를 다음번에 할 때 비교 기준이 됩니다.</li>
+      <li data-ko="<strong>AMRAP</strong> — 완료한 라운드 수 + 남은 렙 수 (예: 7+12). 렙까지 기록해야 정확한 비교가 됩니다." data-en="<strong>AMRAP</strong> — Rounds completed + remaining reps (e.g., 7+12). Log reps too for accurate comparison."><strong>AMRAP</strong> — 완료한 라운드 수 + 남은 렙 수 (예: 7+12). 렙까지 기록해야 정확한 비교가 됩니다.</li>
+      <li data-ko="<strong>EMOM</strong> — 완료 여부 + 사용한 무게 또는 변형 동작. 마지막 몇 분에 무너졌는지도 메모해두면 좋습니다." data-en="<strong>EMOM</strong> — Whether you completed it + weight used or movement modifications. Note which minutes you struggled."><strong>EMOM</strong> — 완료 여부 + 사용한 무게 또는 변형 동작. 마지막 몇 분에 무너졌는지도 메모해두면 좋습니다.</li>
+      <li data-ko="<strong>Tabata</strong> — 최저 렙 수 (Tabata Score). 8세트 중 가장 적게 수행한 렙이 공식 점수입니다." data-en="<strong>Tabata</strong> — Lowest rep count (Tabata Score). The fewest reps in any of 8 rounds is the official score."><strong>Tabata</strong> — 최저 렙 수 (Tabata Score). 8세트 중 가장 적게 수행한 렙이 공식 점수입니다.</li>
+    </ul>
+
+    <h2 data-ko="기록 습관을 만드는 3가지 원칙" data-en="3 Principles for Building a Logging Habit">기록 습관을 만드는 3가지 원칙</h2>
+    <p data-ko="기록 습관이 자리 잡지 않는 가장 큰 이유는 &quot;귀찮아서&quot;입니다. 이 3가지 원칙이 그 문제를 해결해줍니다." data-en="The most common reason people don't log consistently is &quot;too much hassle.&quot; These 3 principles solve that problem.">기록 습관이 자리 잡지 않는 가장 큰 이유는 "귀찮아서"입니다. 이 3가지 원칙이 그 문제를 해결해줍니다.</p>
+    <ol>
+      <li data-ko="<strong>운동 직후 30초</strong> — 수업이 끝나고 숨 돌리는 그 순간, 화이트보드를 찍으세요. 나중에 하려고 미루면 잊어버립니다." data-en="<strong>30 seconds right after class</strong> — While catching your breath post-WOD, snap the whiteboard. Waiting means forgetting."><strong>운동 직후 30초</strong> — 수업이 끝나고 숨 돌리는 그 순간, 화이트보드를 찍으세요. 나중에 하려고 미루면 잊어버립니다.</li>
+      <li data-ko="<strong>사진 한 장으로 대체</strong> — 긴 메모 대신 화이트보드 사진 한 장이면 충분합니다. AI가 나머지를 처리합니다." data-en="<strong>One photo instead of notes</strong> — A single whiteboard photo beats a long memo. AI handles the rest."><strong>사진 한 장으로 대체</strong> — 긴 메모 대신 화이트보드 사진 한 장이면 충분합니다. AI가 나머지를 처리합니다.</li>
+      <li data-ko="<strong>완벽하지 않아도 OK</strong> — 모든 항목을 채우지 않아도 됩니다. 날짜와 WOD 이름만 남겨도 훗날 참고 기준이 됩니다. 일관성이 완벽함보다 중요합니다." data-en="<strong>Imperfect is fine</strong> — You don't need to fill every field. Even just the date and WOD name creates a future reference point. Consistency beats perfection."><strong>완벽하지 않아도 OK</strong> — 모든 항목을 채우지 않아도 됩니다. 날짜와 WOD 이름만 남겨도 훗날 참고 기준이 됩니다. 일관성이 완벽함보다 중요합니다.</li>
+    </ol>
+
+    <h2 data-ko="자주 묻는 질문" data-en="Frequently Asked Questions">자주 묻는 질문</h2>
+    <div class="faq-item">
+      <h3 data-ko="Q. 매번 기록하기 너무 귀찮은데 어떻게 하면 좋을까요?" data-en="Q. Logging every time feels like too much effort. Any tips?">Q. 매번 기록하기 너무 귀찮은데 어떻게 하면 좋을까요?</h3>
+      <p data-ko="화이트보드 사진 한 장으로 충분합니다. Fitter AI는 사진에서 WOD를 자동 인식하므로, 수업 끝나고 보드를 찍는 <strong>10초 습관</strong>만으로 기록이 완료됩니다. 완벽하게 적을 필요는 없습니다 — 일관성이 핵심입니다." data-en="One whiteboard photo is all you need. Fitter AI auto-recognizes WODs from photos, so a <strong>10-second snap</strong> after class completes your log. No need to be perfect — consistency is the goal.">화이트보드 사진 한 장으로 충분합니다. Fitter AI는 사진에서 WOD를 자동 인식하므로, 수업 끝나고 보드를 찍는 <strong>10초 습관</strong>만으로 기록이 완료됩니다. 완벽하게 적을 필요는 없습니다 — 일관성이 핵심입니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-ko="Q. Scaled로 운동했는데 기록할 가치가 있나요?" data-en="Q. I did it Scaled — is it still worth logging?">Q. Scaled로 운동했는데 기록할 가치가 있나요?</h3>
+      <p data-ko="물론입니다. Scaled 기록도 성장의 증거입니다. 오늘의 Scaled 기록이 3개월 후 <strong>Rx 도전의 기준점</strong>이 됩니다. Fitter AI에서는 Rx와 Scaled를 구분하여 기록할 수 있어 성장 과정을 명확하게 볼 수 있습니다." data-en="Absolutely. Scaled records are proof of progress too. Today's Scaled time becomes the <strong>benchmark for your future Rx attempt</strong>. Fitter AI lets you log Rx and Scaled separately so you can track the full journey.">물론입니다. Scaled 기록도 성장의 증거입니다. 오늘의 Scaled 기록이 3개월 후 <strong>Rx 도전의 기준점</strong>이 됩니다. Fitter AI에서는 Rx와 Scaled를 구분하여 기록할 수 있어 성장 과정을 명확하게 볼 수 있습니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-ko="Q. 박스에서 화이트보드를 안 쓰는 경우 어떻게 기록하나요?" data-en="Q. What if my box doesn't use a whiteboard?">Q. 박스에서 화이트보드를 안 쓰는 경우 어떻게 기록하나요?</h3>
+      <p data-ko="화이트보드 없이도 운동 이름, 동작, 결과를 직접 입력할 수 있습니다. 코치가 카카오톡이나 메시지로 보낸 WOD 내용의 <strong>스크린샷을 AI 인식 기능에 활용</strong>하는 것도 가능합니다." data-en="Manual entry is always available. You can also use the <strong>AI recognition feature on a screenshot</strong> of WOD details sent by your coach via text or messaging apps.">화이트보드 없이도 운동 이름, 동작, 결과를 직접 입력할 수 있습니다. 코치가 카카오톡이나 메시지로 보낸 WOD 내용의 <strong>스크린샷을 AI 인식 기능에 활용</strong>하는 것도 가능합니다.</p>
+    </div>
+    <div class="faq-item">
+      <h3 data-ko="Q. 오래된 기록을 소급 입력할 수 있나요?" data-en="Q. Can I backfill old records?">Q. 오래된 기록을 소급 입력할 수 있나요?</h3>
+      <p data-ko="네, 날짜를 직접 지정하여 과거 기록을 소급 입력할 수 있습니다. 예전 사진이나 메모가 있다면 지금 바로 입력해보세요. 기록이 쌓일수록 성장 그래프가 더 의미 있어집니다." data-en="Yes, you can set any past date when logging. If you have old photos or notes, enter them now. The more history you build, the more meaningful your progress graph becomes.">네, 날짜를 직접 지정하여 과거 기록을 소급 입력할 수 있습니다. 예전 사진이나 메모가 있다면 지금 바로 입력해보세요. 기록이 쌓일수록 성장 그래프가 더 의미 있어집니다.</p>
+    </div>
+
+        <div class="cta-box">
       <h3 data-ko="Fitter AI로 시작하세요" data-en="Get Started with Fitter AI">Fitter AI로 시작하세요</h3>
       <p data-ko="사진 한 장이면 AI가 알아서 기록합니다. 무료로 다운로드하세요." data-en="One photo, AI does the rest. Download for free.">사진 한 장이면 AI가 알아서 기록합니다. 무료로 다운로드하세요.</p>
       <a href="../index.html#download" class="cta-link" data-ko="무료 다운로드" data-en="Free Download">무료 다운로드</a>

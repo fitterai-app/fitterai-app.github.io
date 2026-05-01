@@ -54,6 +54,34 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "친구가 없어도 리더보드를 볼 수 있나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "아니요. 친구 탭의 리더보드는 내가 팔로우한 사람들의 기록만 보여줍니다. 친구가 한 명도 없으면 내 기록만 표시됩니다. 같은 박스 멤버들에게 친구 코드를 공유해보세요." }
+    },
+    {
+      "@type": "Question",
+      "name": "리더보드에서 내 기록이 공개되는 범위는 어떻게 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "내 기록은 나를 팔로우하는 사람들에게만 공개됩니다. 앱을 처음 설치한 낯선 사람에게는 내 기록이 노출되지 않습니다. 설정에서 프로필 공개 여부를 조정할 수 있습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "같은 박스 사람들과 비교하려면 어떻게 하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "두 가지 방법이 있습니다. 첫째, 친구 코드를 공유해서 친구 리더보드에서 비교하는 방법. 둘째, 박스 탭의 공식 박스 리더보드를 이용하면 친구 추가 없이도 같은 박스 전체 멤버와 비교할 수 있습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "WOD 순위에서 Rx와 Scaled는 어떻게 구분되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "기록 저장 시 Rx, Scaled로 구분할 수 있습니다. 리더보드에서 Rx 참여자가 상위에 표시되도록 정렬됩니다. Scaled로 운동하더라도 기록은 남길 수 있으며 동일 조건 내에서 공정하게 비교됩니다." }
+    }
+  ]
+}
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Pretendard',sans-serif;color:#1A1A1A;background:#F5F7FA;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -93,6 +121,11 @@ strong{color:#1A1A1A}
 .cta-link{display:inline-block;background:#fff;color:#6D28D9;font-size:15px;font-weight:600;padding:12px 28px;border-radius:12px;text-decoration:none}
 .back-link{display:inline-block;margin-top:24px;font-size:14px;color:#2196F3;text-decoration:none;font-weight:500}
 @media(max-width:600px){.card{padding:28px 20px}h1{font-size:26px}h2{font-size:19px}.vs-table{font-size:13px}.vs-table th,.vs-table td{padding:8px 10px}}
+.faq{margin-top:40px}
+.faq h2{margin-top:40px}
+.faq-item{background:#F9FAFB;border-radius:12px;padding:20px 24px;margin-bottom:12px;border-left:4px solid #8B5CF6}
+.faq-item h3{font-size:15px;font-weight:700;color:#1A1A1A;margin-top:0;margin-bottom:8px}
+.faq-item p{margin-bottom:0;font-size:14px;color:#4B5563}
 .related{margin-top:48px;padding-top:32px;border-top:1px solid #E5E7EB}
 .related h3{font-size:18px;font-weight:700;margin-bottom:16px}
 .related-list{display:flex;flex-direction:column;gap:12px}
@@ -179,6 +212,50 @@ strong{color:#1A1A1A}
 
     <div class="tip-box">
       <p data-ko="💡 팁: 같은 박스 멤버끼리 친구 코드를 공유하면 박스 안에서도 작은 리더보드를 만들 수 있습니다. 공식 박스 리더보드와는 별개로 친한 친구끼리만의 경쟁도 가능합니다!" data-en="💡 Tip: Share friend codes within your box to create a mini leaderboard among close friends. It works independently from the official box leaderboard!">💡 팁: 같은 박스 멤버끼리 친구 코드를 공유하면 박스 안에서도 작은 리더보드를 만들 수 있습니다. 공식 박스 리더보드와는 별개로 친한 친구끼리만의 경쟁도 가능합니다!</p>
+    </div>
+
+    <h2 data-ko="1RM 리더보드 vs 운동 횟수 리더보드 — 무엇이 다른가?" data-en="1RM Leaderboard vs Workout Count Leaderboard — What's the Difference?">1RM 리더보드 vs 운동 횟수 리더보드 — 무엇이 다른가?</h2>
+
+    <p data-ko="Fitter AI 친구 탭에는 두 가지 리더보드 카테고리가 있습니다. <strong>1RM 리더보드</strong>는 종목별 최고 기록(PR)을 비교하고, <strong>운동 횟수 리더보드</strong>는 이번 달·지난 달·올해 운동한 횟수를 기준으로 순위를 매깁니다. 이 두 가지는 성격이 완전히 다른 경쟁입니다." data-en="Fitter AI's Friends tab has two leaderboard categories. The <strong>1RM Leaderboard</strong> compares personal records by lift, while the <strong>Workout Count Leaderboard</strong> ranks by training frequency — this month, last month, or this year. These are two very different types of competition.">Fitter AI 친구 탭에는 두 가지 리더보드 카테고리가 있습니다. <strong>1RM 리더보드</strong>는 종목별 최고 기록(PR)을 비교하고, <strong>운동 횟수 리더보드</strong>는 이번 달·지난 달·올해 운동한 횟수를 기준으로 순위를 매깁니다. 이 두 가지는 성격이 완전히 다른 경쟁입니다.</p>
+
+    <p data-ko="1RM 리더보드는 <strong>근력 중심의 크로스핏터</strong>에게 맞습니다. Back Squat, Deadlift, Clean &amp; Jerk 등 종목별로 따로 순위가 매겨지기 때문에, 전체 근력에서 뒤지더라도 특정 종목에서 1등을 노릴 수 있습니다. &quot;나는 Front Squat만큼은 아무도 못 이긴다&quot;는 구체적인 자신감이 생깁니다." data-en="The 1RM Leaderboard suits <strong>strength-focused CrossFitters</strong>. Since each lift has its own ranking, you can target first place in one specific movement even if you're not the strongest overall. &quot;No one beats me on Front Squat&quot; becomes a real and motivating goal.">1RM 리더보드는 <strong>근력 중심의 크로스핏터</strong>에게 맞습니다. Back Squat, Deadlift, Clean &amp; Jerk 등 종목별로 따로 순위가 매겨지기 때문에, 전체 근력에서 뒤지더라도 특정 종목에서 1등을 노릴 수 있습니다. "나는 Front Squat만큼은 아무도 못 이긴다"는 구체적인 자신감이 생깁니다.</p>
+
+    <p data-ko="반면 운동 횟수 리더보드는 <strong>꾸준함이 강점인 크로스핏터</strong>에게 유리합니다. 무거운 무게를 드는 것과 상관없이, 꾸준히 박스에 나오는 것만으로 상위권을 차지할 수 있습니다. 처음 크로스핏을 시작한 분들도 출석률에서 베테랑을 이길 수 있다는 점이 큰 동기 부여가 됩니다." data-en="The Workout Count Leaderboard favors <strong>consistency-focused CrossFitters</strong>. Regardless of how heavy you lift, showing up regularly puts you at the top. Even beginners can outrank veterans on attendance — a powerful motivator for newcomers.">반면 운동 횟수 리더보드는 <strong>꾸준함이 강점인 크로스핏터</strong>에게 유리합니다. 무거운 무게를 드는 것과 상관없이, 꾸준히 박스에 나오는 것만으로 상위권을 차지할 수 있습니다. 처음 크로스핏을 시작한 분들도 출석률에서 베테랑을 이길 수 있다는 점이 큰 동기 부여가 됩니다.</p>
+
+    <h2 data-ko="친구 추천 시스템 — 같은 박스 멤버를 자동으로 찾는 법" data-en="Friend Suggestion System — Automatically Find Your Box Members">친구 추천 시스템 — 같은 박스 멤버를 자동으로 찾는 법</h2>
+
+    <p data-ko="매번 친구 코드를 직접 물어보는 게 번거롭다면, Fitter AI의 <strong>친구 추천 기능</strong>을 활용해보세요. 앱이 자동으로 &quot;알 수도 있는 사람&quot;을 추천해줍니다." data-en="If exchanging friend codes feels awkward, try Fitter AI's <strong>friend suggestion feature</strong>. The app automatically shows you &quot;people you may know.&quot;">매번 친구 코드를 직접 물어보는 게 번거롭다면, Fitter AI의 <strong>친구 추천 기능</strong>을 활용해보세요. 앱이 자동으로 "알 수도 있는 사람"을 추천해줍니다.</p>
+
+    <p data-ko="추천 기준은 두 가지입니다. 첫째, <strong>같은 박스로 등록된 사용자</strong>입니다. 매일 같이 운동하는 박스 멤버가 이미 앱을 쓰고 있다면, 굳이 코드를 교환하지 않아도 발견할 수 있습니다. 두 번째로, 비슷한 운동 패턴을 가진 사용자도 추천 대상이 됩니다. 내가 운동하는 요일과 패턴이 비슷한 사람을 자동으로 찾아주는 셈입니다." data-en="Suggestions are based on two criteria. First, <strong>users registered at the same box</strong> — if your gym buddy is already on the app, you'll find them without swapping codes. Second, users with similar training patterns. The app identifies people who train on similar schedules and suggests them automatically.">추천 기준은 두 가지입니다. 첫째, <strong>같은 박스로 등록된 사용자</strong>입니다. 매일 같이 운동하는 박스 멤버가 이미 앱을 쓰고 있다면, 굳이 코드를 교환하지 않아도 발견할 수 있습니다. 두 번째로, 비슷한 운동 패턴을 가진 사용자도 추천 대상이 됩니다. 내가 운동하는 요일과 패턴이 비슷한 사람을 자동으로 찾아주는 셈입니다.</p>
+
+    <p data-ko="개인 정보가 걱정된다면 설정에서 <strong>&quot;친구 추천에 표시&quot;</strong> 옵션을 끌 수 있습니다. 내 프로필이 다른 사용자의 추천 목록에 나타나지 않도록 설정할 수 있어 프라이버시를 철저히 지킬 수 있습니다. 초대 코드를 공유하는 가장 빠른 방법은 친구 탭의 <strong>공유 버튼</strong>입니다. 카카오톡, 문자, 또는 어떤 메신저로도 코드를 한 번에 전송할 수 있습니다." data-en="Privacy-conscious? Turn off <strong>&quot;Appear in friend suggestions&quot;</strong> in settings — your profile won't show up on anyone else's list. To share your code fastest, use the <strong>Share button</strong> in the Friends tab. Send it via KakaoTalk, text, or any messenger in one tap.">개인 정보가 걱정된다면 설정에서 <strong>"친구 추천에 표시"</strong> 옵션을 끌 수 있습니다. 내 프로필이 다른 사용자의 추천 목록에 나타나지 않도록 설정할 수 있어 프라이버시를 철저히 지킬 수 있습니다. 초대 코드를 공유하는 가장 빠른 방법은 친구 탭의 <strong>공유 버튼</strong>입니다. 카카오톡, 문자, 또는 어떤 메신저로도 코드를 한 번에 전송할 수 있습니다.</p>
+
+    <h2 data-ko="소셜 피드와 리더보드 연동 — WOD 그룹 순위" data-en="Social Feed &amp; Leaderboard Integration — WOD Group Rankings">소셜 피드와 리더보드 연동 — WOD 그룹 순위</h2>
+
+    <p data-ko="리더보드가 단순히 숫자 비교에 그치지 않도록, Fitter AI는 <strong>소셜 피드</strong>와 연동됩니다. 친구가 같은 WOD를 기록하면, 소셜 피드에 <strong>WOD 그룹 카드</strong>가 나타나며 오늘 이 운동에 몇 명이 참여했고 순위가 어떻게 되는지를 한눈에 보여줍니다." data-en="To go beyond simple number comparisons, Fitter AI integrates with a <strong>Social Feed</strong>. When friends log the same WOD, a <strong>WOD Group Card</strong> appears in the feed — showing at a glance how many people did this workout and where everyone ranks.">리더보드가 단순히 숫자 비교에 그치지 않도록, Fitter AI는 <strong>소셜 피드</strong>와 연동됩니다. 친구가 같은 WOD를 기록하면, 소셜 피드에 <strong>WOD 그룹 카드</strong>가 나타나며 오늘 이 운동에 몇 명이 참여했고 순위가 어떻게 되는지를 한눈에 보여줍니다.</p>
+
+    <p data-ko="예를 들어 오늘 박스에서 &quot;21-15-9 Thruster + Pull-up&quot;을 했는데, 같은 박스 친구 3명이 같은 WOD를 기록했다면 피드에 순위 카드가 자동으로 생성됩니다. 내가 기록을 올리는 순간 즉시 그 카드에 내 순위가 반영됩니다. 별도 설정 없이 자동으로 만들어지는 것이 핵심입니다." data-en="For example, if today's WOD is &quot;21-15-9 Thrusters + Pull-ups&quot; and three box friends log the same workout, a ranking card is automatically created in the feed. The moment you log your score, your ranking appears on it instantly — no extra setup required.">예를 들어 오늘 박스에서 "21-15-9 Thruster + Pull-up"을 했는데, 같은 박스 친구 3명이 같은 WOD를 기록했다면 피드에 순위 카드가 자동으로 생성됩니다. 내가 기록을 올리는 순간 즉시 그 카드에 내 순위가 반영됩니다. 별도 설정 없이 자동으로 만들어지는 것이 핵심입니다.</p>
+
+    <p data-ko="이 기능의 핵심은 <strong>같은 WOD를 한 사람끼리 자연스럽게 연결</strong>된다는 점입니다. 친구를 미리 추가하지 않아도, 같은 날 같은 박스에서 같은 WOD를 기록한 사람들끼리 소셜 그룹이 형성됩니다. 크로스핏의 &quot;오늘의 WOD&quot; 문화를 디지털로 확장한 경험입니다." data-en="The key is that <strong>people who did the same WOD are automatically connected</strong>. Even without adding friends in advance, anyone who logs the same WOD at the same box on the same day forms a social group. It's a digital extension of CrossFit's shared &quot;today's WOD&quot; culture.">이 기능의 핵심은 <strong>같은 WOD를 한 사람끼리 자연스럽게 연결</strong>된다는 점입니다. 친구를 미리 추가하지 않아도, 같은 날 같은 박스에서 같은 WOD를 기록한 사람들끼리 소셜 그룹이 형성됩니다. 크로스핏의 "오늘의 WOD" 문화를 디지털로 확장한 경험입니다.</p>
+
+    <div class="faq">
+      <h2 data-ko="자주 묻는 질문" data-en="Frequently Asked Questions">자주 묻는 질문</h2>
+      <div class="faq-item">
+        <h3 data-ko="Q. 친구가 없어도 리더보드를 볼 수 있나요?" data-en="Q. Can I see the leaderboard without any friends?">Q. 친구가 없어도 리더보드를 볼 수 있나요?</h3>
+        <p data-ko="아니요. 친구 탭의 리더보드는 내가 팔로우한 사람들의 기록만 보여줍니다. 친구가 한 명도 없으면 내 기록만 표시됩니다. 친구를 추가할수록 의미 있는 비교가 가능해지므로, 같은 박스 멤버들에게 친구 코드를 공유해보세요." data-en="No. The Friends tab leaderboard only shows records of people you follow. With no friends added, only your own record appears. The more friends you add, the more meaningful the comparison — share your friend code with box members to get started.">아니요. 친구 탭의 리더보드는 내가 팔로우한 사람들의 기록만 보여줍니다. 친구가 한 명도 없으면 내 기록만 표시됩니다. 친구를 추가할수록 의미 있는 비교가 가능해지므로, 같은 박스 멤버들에게 친구 코드를 공유해보세요.</p>
+      </div>
+      <div class="faq-item">
+        <h3 data-ko="Q. 리더보드에서 내 기록이 공개되는 범위는 어떻게 되나요?" data-en="Q. Who can see my records on the leaderboard?">Q. 리더보드에서 내 기록이 공개되는 범위는 어떻게 되나요?</h3>
+        <p data-ko="내 기록은 나를 팔로우하는 사람들에게만 공개됩니다. 앱을 처음 설치한 낯선 사람에게는 내 기록이 노출되지 않습니다. 또한 설정에서 프로필 공개 여부를 조정할 수 있어 원치 않는 노출을 방지할 수 있습니다." data-en="Your records are visible only to people who follow you. Strangers who just installed the app cannot see your data. You can also adjust your profile visibility in settings to prevent unwanted exposure.">내 기록은 나를 팔로우하는 사람들에게만 공개됩니다. 앱을 처음 설치한 낯선 사람에게는 내 기록이 노출되지 않습니다. 또한 설정에서 프로필 공개 여부를 조정할 수 있어 원치 않는 노출을 방지할 수 있습니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3 data-ko="Q. 같은 박스 사람들과 비교하려면 어떻게 하나요?" data-en="Q. How do I compare with people from my box?">Q. 같은 박스 사람들과 비교하려면 어떻게 하나요?</h3>
+        <p data-ko="두 가지 방법이 있습니다. 첫째, 친구 탭에서 같은 박스 멤버에게 친구 코드를 공유하면 친구 리더보드에서 비교할 수 있습니다. 둘째, 박스 탭의 공식 박스 리더보드를 이용하면 친구 추가 없이도 같은 박스 전체 멤버와 바로 비교할 수 있습니다." data-en="Two ways. First, share your friend code with box members to compare on the Friends leaderboard. Second, use the official Box Leaderboard in the Box tab — no friend connection needed, compare with all box members directly.">두 가지 방법이 있습니다. 첫째, 친구 탭에서 같은 박스 멤버에게 친구 코드를 공유하면 친구 리더보드에서 비교할 수 있습니다. 둘째, 박스 탭의 공식 박스 리더보드를 이용하면 친구 추가 없이도 같은 박스 전체 멤버와 바로 비교할 수 있습니다.</p>
+      </div>
+      <div class="faq-item">
+        <h3 data-ko="Q. WOD 순위에서 Rx와 Scaled는 어떻게 구분되나요?" data-en="Q. How are Rx and Scaled separated in WOD rankings?">Q. WOD 순위에서 Rx와 Scaled는 어떻게 구분되나요?</h3>
+        <p data-ko="기록 저장 시 Rx, Scaled, 또는 기타로 구분할 수 있습니다. 리더보드와 소셜 피드에서는 Rx 참여자가 상위에 표시되도록 정렬됩니다. Scaled로 운동하더라도 기록은 남길 수 있으며, 동일 조건(Rx끼리, Scaled끼리) 내에서 공정하게 비교됩니다." data-en="When saving a record, you can mark it as Rx, Scaled, or other. On leaderboards and social feeds, Rx participants are sorted above Scaled. Scaled records are still saved and compared fairly within the same category.">기록 저장 시 Rx, Scaled, 또는 기타로 구분할 수 있습니다. 리더보드와 소셜 피드에서는 Rx 참여자가 상위에 표시되도록 정렬됩니다. Scaled로 운동하더라도 기록은 남길 수 있으며, 동일 조건(Rx끼리, Scaled끼리) 내에서 공정하게 비교됩니다.</p>
+      </div>
     </div>
 
     <div class="cta-box">
